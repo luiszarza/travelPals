@@ -18,11 +18,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(listing_params)
+    @activity = Activity.new(activity_params)
     @user = current_user
     @activity.user = @user
     if @activity.save
-      redirect_to listing_path(@activity)
+      redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,8 +32,8 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(listing_params)
-    redirect_to listing_path(@activity)
+    @activity.update(activity_params)
+    redirect_to activity_path(@activity)
   end
 
   def destroy
@@ -47,9 +47,8 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
-  def listing_params
-    params.require(:activity).permit(:content, :location, :title, :price, photos: [])
+  def activity_params
+    params.require(:activity).permit(:title, :description, :location, :date, photos: [])
   end
 
 end
-
