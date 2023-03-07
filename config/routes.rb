@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get '/dashboard', to: 'pages#dashboard', as: :dashboard
+
   resources :activities do
-    resources :bookings, only: :create
+    resources :bookings, :comments, only: :create
   end
 
   resources :bookings, only: :destroy do
@@ -12,4 +14,8 @@ Rails.application.routes.draw do
       get :confirmation
     end
   end
+
+  resources :users, only: :show
+
+  resources :chats, only: [:show, :index]
 end
