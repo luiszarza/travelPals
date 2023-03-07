@@ -27,6 +27,7 @@ puts "Attaching profile photo 1"
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
 
+
  activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
