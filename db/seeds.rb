@@ -21,17 +21,14 @@ user1 = User.create!(
   bio: "Hi there! My name is John and I'm a seasoned traveler with a passion for exploring new cultures and cuisines. When I'm not on the road, you can find me cooking up a storm in my kitchen or planning my next adventure. I'm excited to connect with fellow travelers and share my tips and experiences on this app.",
   age: 25
 )
-file = URI.open("https://source.unsplash.com/random/250x250/?model")
-puts "Attaching user photo 1"
-user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-user1.save
 
 file = URI.open("https://source.unsplash.com/random/250x250/?model")
 puts "Attaching profile photo 1"
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
 
-activity = Activity.create!(
+
+ activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
     location: "Bali",
@@ -56,7 +53,7 @@ puts "Attaching profile photo 2"
 user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save
 
-activity = Activity.create!(
+ activity = Activity.create!(
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
     location: "Tokyo",
