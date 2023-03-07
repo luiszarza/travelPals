@@ -3,5 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :activities
+  resources :activities do
+    resources :bookings, only: :create
+  end
+
+  resources :bookings, only: :destroy do
+    member do
+      get :confirmation
+    end
+  end
 end
