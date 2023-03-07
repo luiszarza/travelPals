@@ -21,6 +21,10 @@ user1 = User.create!(
   bio: "Hi there! My name is John and I'm a seasoned traveler with a passion for exploring new cultures and cuisines. When I'm not on the road, you can find me cooking up a storm in my kitchen or planning my next adventure. I'm excited to connect with fellow travelers and share my tips and experiences on this app.",
   age: 25
 )
+file = URI.open("https://source.unsplash.com/random/250x250/?model")
+puts "Attaching user photo 1"
+user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user1.save
 
 file = URI.open("https://source.unsplash.com/random/250x250/?model")
 puts "Attaching profile photo 1"
