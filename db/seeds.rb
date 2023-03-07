@@ -19,13 +19,15 @@ user1 = User.create!(
   password: "abc123",
   name: "John Smith",
   bio: "Hi there! My name is John and I'm a seasoned traveler with a passion for exploring new cultures and cuisines. When I'm not on the road, you can find me cooking up a storm in my kitchen or planning my next adventure. I'm excited to connect with fellow travelers and share my tips and experiences on this app.",
-  age: 25 )
+  age: 25
+)
 
 activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
     location: "Bali",
-    user_id: user1.id)
+    user_id: user1.id
+)
 
 file = URI.open("https://source.unsplash.com/random/430x650/?hike-mount-batur")
 puts "Attaching photo 1"
