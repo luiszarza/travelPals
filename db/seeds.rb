@@ -9,7 +9,7 @@ require "open-uri"
 
 puts "Cleaning up database..."
 Booking.destroy_all
-activity = Activity.destroy_all
+Activity.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
@@ -31,7 +31,7 @@ puts "Attaching profile photo 1"
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
 
-activity = activity = Activity.create!(
+activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
     location: "Bali",
@@ -56,7 +56,7 @@ puts "Attaching profile photo 2"
 user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save
 
-activity = activity = Activity.create!(
+activity = Activity.create!(
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
     location: "Tokyo",
