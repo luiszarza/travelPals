@@ -14,10 +14,11 @@
                 <div class="card-body pt-0">
                   <%= link_to activity, class: "text-decoration-none" do %>
                   <h5 ><%= activity.title %></h5>
+                  <% end %>
                   <p>Location: <%= activity.location %></p>
                   <p>Date: <%= activity.date %></p>
+                  <p>Profile pic: <%= activity.date %></p>
                   <%= cl_image_tag activity.user.photo.key %>
-                  <% end %>
                 </div>
               </div>
             </div>
