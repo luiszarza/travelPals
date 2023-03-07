@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Cleaning up database..."
+Booking.destroy_all
+Activity.destroy_all
+User.destroy_all
+puts "Database cleaned"
+
+
 user1 = User.create!(
   email: "john@gmail.com",
   password: "abc123",
@@ -16,12 +24,10 @@ activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
     location: "Bali",
-    date: 2023-05-15,
-    participants_number: 12,
     user_id: user1.id)
 
 file = URI.open("https://source.unsplash.com/random/430x650/?hike-mount-batur")
-puts "Attaching photo 1 of ##{i}"
+puts "Attaching photo 1"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
@@ -36,12 +42,10 @@ activity = Activity.create!(
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
     location: "Tokyo",
-    date: "2023-05-20",
-    participants_number: 8,
     user_id: user2.id
   )
 
 file = URI.open("https://source.unsplash.com/random/430x650/?sushi")
-puts "Attaching photo 1 of ##{i}"
+puts "Attaching photo 2"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
