@@ -10,7 +10,7 @@
                   <h5 ><%= activity.title %></h5>
                   <% end %>
                   <p>Location: <%= activity.location %></p>
-                  <p>Date: <%= activity.date %></p>
+                  <p>Date: <%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
                   <p>Profile pic: </p>
                   <%= cl_image_tag activity.user.photo.key %>
                 </div>

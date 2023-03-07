@@ -32,7 +32,7 @@ user1.save
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
     location: "Bali",
-    date: Date.new(2023,6,12),
+    time: DateTime.new(2023, 10, 3, 18, 0, 0),
     user_id: user1.id
 )
 
@@ -57,7 +57,7 @@ user2.save
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
     location: "Tokyo",
-    date: Date.new(2023,9,18),
+    time: DateTime.new(2023, 5, 5, 13, 30, 0),
     user_id: user2.id
   )
 
@@ -82,7 +82,7 @@ user3.save
     title: "Kayaking in Halong Bay",
     description: "Explore the stunning limestone karsts and crystal-clear waters of Halong Bay on this kayaking adventure. We'll paddle through hidden lagoons and explore secluded beaches. No kayaking experience necessary!",
     location: "Halong Bay",
-    date: Date.new(2023,5,25),
+    time: DateTime.new(2023, 8, 7, 10, 15, 0),
     user_id: user3.id
   )
 
@@ -108,7 +108,7 @@ user4.save
     title: "Cooking class in Tuscany",
     description: "Indulge your passion for food and wine with this cooking class in the heart of Tuscany. You'll learn how to make classic Italian dishes using fresh, seasonal ingredients, and enjoy a delicious meal paired with local wines.",
     location: "Tuscany",
-    date: Date.new(2023,12,3),
+    time: DateTime.new(2023, 6, 10, 19, 45, 0),
     user_id: user4.id
   )
 
@@ -133,7 +133,7 @@ user5.save
     title: "Surfing lessons in Byron Bay",
     description: "Experience the thrill of surfing with expert instructors in the beautiful beach town of Byron Bay. Whether you're a beginner or an experienced surfer, you'll improve your skills and have a blast in the waves.",
     location: "Byron Bay",
-    date: Date.new(2023,6,3),
+    time: DateTime.new(2023, 7, 12, 8, 0, 0),
     user_id: user5.id
   )
 
@@ -158,7 +158,7 @@ user6.save
   title: "Surfing Lessons in Waikiki",
   description: "Learn to surf with a professional instructor in the world-famous Waikiki Beach in Hawaii. This activity is perfect for beginners and intermediate surfers who want to improve their skills. Enjoy the beautiful scenery and crystal-clear water while riding the waves.",
   location: "Waikiki Beach, Hawaii",
-  date: Date.new(2023,4,29),
+  time: DateTime.new(2023, 9, 15, 16, 30, 0),
   user_id: user6.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?surfing")
@@ -182,7 +182,7 @@ user7.save
   title: "Street Food Tour in Bangkok",
   description: "Embark on a food adventure in Bangkok, exploring the city's vibrant street food scene. Try a variety of authentic Thai dishes from local vendors and restaurants, including pad thai, som tam, and mango sticky rice. Your guide will take you to the best spots in the city and share interesting facts about the culture and history of Thai cuisine.",
   location: "Bangkok, Thailand",
-  date: Date.new(2023,6,3),
+  time: DateTime.new(2023, 5, 18, 12, 0, 0),
   user_id: user7.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?thai-food")
@@ -207,7 +207,7 @@ user8.save
   title: "Wine Tasting in Napa Valley",
   description: "Sip some of the finest wines in the world on a tour of Napa Valley in California. This guided tour will take you to several wineries where you'll sample different types of wine and learn about the wine-making process. Take in the stunning views of the valley while enjoying a delicious lunch with your group.",
   location: "Napa Valley, California",
-  date: Date.new(2023,8,2),
+  time: DateTime.new(2023, 4, 20, 10, 0, 0),
   user_id: user8.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?napa-valley")
@@ -232,7 +232,7 @@ user9.save
   title: "Cooking Class in Tuscany",
   description: "Learn to cook authentic Italian dishes in the beautiful countryside of Tuscany. This hands-on cooking class will teach you how to make pasta from scratch, as well as traditional Tuscan sauces and desserts. Enjoy a glass of local wine while admiring the stunning views of the rolling hills.",
   location: "Tuscany, Italy",
-  date: Date.new(2023,11,3),
+  time: DateTime.new(2023, 6, 23, 14, 45, 0),
   user_id: user9.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?tuscany")
@@ -257,7 +257,7 @@ user10.save
   title: "Yoga Retreat in Bali",
   description: "Escape to paradise and unwind with a yoga retreat in Bali. This retreat includes a yoga class, guided meditation, and workshops on mindfulness and self-care. Relax in the beautiful surroundings of Bali and connect with like-minded individuals.",
   location: "Bali, Indonesia",
-  date: Date.new(2023,9,15),
+  time: DateTime.new(2023, 7, 26, 11, 15, 0),
   user_id: user10.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?yoga")
@@ -281,7 +281,7 @@ user11.save
   title: "Safari in Serengeti National Park",
   description: "Embark on a safari adventure in the heart of Serengeti National Park in Tanzania. This tour will take you on a journey through the African wilderness where you'll see a variety of wildlife, including lions, elephants, and giraffes. Stay in luxury tents and enjoy the stunning views of the savannah.",
   location: "Serengeti National Park, Tanzania",
-  date: Date.new(2023,5,22),
+  time: DateTime.new(2023, 10, 28, 9, 30, 0),
   user_id: user11.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?safari")
@@ -305,7 +305,7 @@ user12.save
   title: "Snowboarding in Whistler",
   description: "Hit the slopes and ride the powder in Whistler, British Columbia. This snowboarding trip includes lessons for beginners and advanced riders, as well as access to some of the best runs in North America. Relax in the cozy ski resort and enjoy the après-ski scene with your group.",
   location: "Whistler, British Columbia",
-  date: Date.new(2023,12,8),
+  time: DateTime.new(2023, 5, 2, 17, 0, 0),
   user_id: user12.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?snowboarding")
@@ -330,7 +330,7 @@ user13.save
   title: "Sunset Sailing",
   description: "Join us for a beautiful sunset sail around the island of Santorini. Experience the stunning views of the Aegean Sea and the island's caldera while enjoying some wine and snacks on board.",
   location: "Santorini, Greece",
-  date: Date.new(2023,11,1),
+  time: DateTime.new(2023, 11, 5, 10, 45, 0),
   user_id: user13.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?sailing")
@@ -354,7 +354,7 @@ user14.save
   title: "Cooking Class",
   description: "Learn to cook some traditional Thai dishes with a local chef. We'll start with a visit to the local market to buy fresh ingredients, and then head back to the kitchen to prepare and cook the dishes together. Enjoy your delicious creations afterwards!",
   location: "Bangkok, Thailand",
-  date: Date.new(2023,10,25),
+  time: DateTime.new(2024, 1, 8, 15, 15, 0),
   user_id: user14.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?bangkok")
@@ -378,7 +378,7 @@ user15.save
   title: "Rafting Adventure",
   description: "Experience the thrill of rafting down the rapids of the Ayung River in Bali. Our experienced guides will ensure your safety as you navigate the river and take in the stunning jungle scenery. Lunch will be provided after the adventure.",
   location: "Bali, Indonesia",
-  date: Date.new(2023,10,3),
+  time: DateTime.new(2024, 1, 11, 14, 0, 0),
   user_id: user15.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?rafting")
@@ -403,7 +403,7 @@ user16.save
   title: "Wine Tasting Tour",
   description: "Join us for a tour of some of the best wineries in the Napa Valley. We'll learn about the history and process of wine making, and of course, taste some delicious wines along the way. Lunch will be provided at one of the wineries.",
   location: "Napa Valley, USA",
-  date: Date.new(2023,9,9),
+  time: DateTime.new(2024, 1, 15, 11, 30, 0),
   user_id: user16.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?wine")
@@ -427,7 +427,7 @@ user17.save
   title: "Yoga Retreat",
   description: "Escape to a beautiful yoga retreat in the mountains of Nepal. We'll practice yoga, enjoy delicious vegetarian meals, and have plenty of time to explore the surrounding nature and culture. This is the perfect opportunity to disconnect and recharge.",
   location: "Pokhara, Nepal",
-  date: Date.new(2023,10,18),
+  time: DateTime.new(2024, 1, 18, 9, 0, 0),
   user_id: user17.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?nepal")
@@ -451,7 +451,7 @@ user18.save
   title: "Scuba Diving Adventure",
   description: "Explore the stunning coral reefs of the Great Barrier Reef in Australia. Our experienced instructors will ensure your safety as you dive down to experience the incredible marine life. Lunch will be provided on board the boat.",
   location: "Great Barrier Reef, Australia",
-  date: Date.new(2023,5,12),
+  time: DateTime.new(2024, 1, 22, 19, 0, 0),
   user_id: user18.id)
 
   file = URI.open("https://source.unsplash.com/random/430x650/?scuba")

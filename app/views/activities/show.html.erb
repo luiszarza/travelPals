@@ -1,6 +1,6 @@
 <h3><%= @activity.title %></h3>
 <%= cl_image_tag @activity.photos.first.key %>
 <p><strong>Location: </strong><%=@activity.location %></p>
-<%= @activity.date %>
+<p><strong>Date: </strong><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
 <p><strong>What we'll be doing:</strong></p>
 <%= @activity.description %>
