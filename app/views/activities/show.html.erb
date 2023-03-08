@@ -22,7 +22,15 @@
       <div>
         <p><strong>Details:</strong></p>
         <p><%= @activity.description %></p>
-      </div>
+       </div>
+      <% if @activity.bookings.any? %>
+        <div>
+          <p><strong>Participants:</strong></p>
+          <% @activity.bookings.each do |booking| %>
+            <%= cl_image_tag booking.user.photo.key, width: 50, height: 50, class: "rounded-circle mr-2" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
