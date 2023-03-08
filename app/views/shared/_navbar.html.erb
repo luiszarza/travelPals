@@ -1,18 +1,18 @@
 <div class="navbar">
-  <div class="nav-link">
+  <%= link_to activities_path, class: "nav-link" do %>
     <i class="fa-regular fa-map"></i>
     <p class="title-navbar">Explore</p>
-  </div>
-  <div class="nav-link">
+  <% end %>
+  <%= link_to activities_path, class: "nav-link" do %>
     <i class="fa-regular fa-plus"></i>
     <p class="title-navbar">Create</p>
-  </div>
-  <div class="nav-link">
+  <% end %>
+  <%= link_to activities_path, class: "nav-link" do %>
     <i class="fa-regular fa-message"></i>
     <p class="title-navbar">Chat</p>
-  </div>
-  <div class="nav-link">
+  <% end %>
+  <%= link_to activities_path, class: "nav-link" do %>
     <i class="fa-regular fa-user"></i>
     <p class="title-navbar">Dashboard</p>
-  </div>
+  <% end %>
 </div>
