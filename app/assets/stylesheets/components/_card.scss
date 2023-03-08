@@ -18,10 +18,6 @@
   box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
 }
 
-p {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .location-date {
   display: flex;
   justify-content: space-between;
@@ -145,32 +141,7 @@ h4 {
   position: relative;
 }
 
-.card-index-picture {
-  width: 100%;
-  height: 211px;
-  border-radius: 35px;
-  margin-top: 15px;
-}
-
-.card-index-profile {
-  border-radius: 100%;
-  height: 65px;
-  width: 65px;
-  position: absolute;
-  right: -3px;
-  bottom: -10px;
-}
-
-.date-pax {
-  display: flex;
-  justify-content: space-between;
-}
-
 .location {
   font-weight: 600;
 }
 
-.descripton-index {
-  display: flex;
-  flex-direction: column;
-}
