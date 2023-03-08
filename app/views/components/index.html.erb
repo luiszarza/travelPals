@@ -1,0 +1,98 @@
+<div class="container">
+  <h1>Components#index</h1>
+  <p>Find me in app/views/components/index.html.erb</p>
+
+  <a class="button-rectangle-orange" href="#">Sign-up</a>
+
+  <a class="button-rectangle-white" href="#">Login</a>
+
+  <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+
+  <a class="button-join" href="#">Join</a>
+
+  <a class="button-view-list" href="#">View list</a>
+
+  <%# <a class="button-chat" href="#"><i class="fa-regular fa-message"></i>  Chat</a> %>
+
+  <a class="button-add-calendar" href="#">Add to my calendar</a>
+
+  <%# <a class="button-round-grey" href="#"><i class="fa-solid fa-angle-left"></i></i></a> %>
+
+  <div class="card-map-image">
+    <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" class="img-map" alt="...">
+    <div class="location-date">
+      <p class= "location">Dive in Nusa Pedina</p>
+      <p class="date">20-03-2023</p>
+    </div>
+    <p class="country"><i class="fa-sharp fa-solid fa-location-dot"></i>  Bali, Indonesia</p>
+  </div>
+
+
+  <form action="#" method="GET" class="search-form">
+    <input type="search" class="search-term" placeholder="Search for location or activity">
+    <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+    <%# <input type="submit" class="button-search" value="Search"> %>
+  </form>
+
+  <a class="button-round-grey" href="#"><i class="fa-solid fa-angle-left"></i></i></a>
+  <div class="card-profile">
+    <%= image_tag 'fanny.jpg', alt: "text", :class => "card-profile-picture" %>
+    <h3>Fanny, 28</h3>
+    <div class= "profile-picture">
+      <br>
+      <h4>About Me</h4>
+      <p>Hello everybody! This is my bio. I like cats and long hikes 🌴</p>
+    </div>
+    <a class="button-chat" href="#"><i class="fa-regular fa-message"></i>  Chat</a>
+  </div>
+
+  <div class="card-event">
+    <%= image_tag 'monkey.jpg', alt: "text", :class => "monkey" %>
+    <div class ="description">
+      <p class= "location">Monkey Forest</p>
+      <p class="date">20-03-2023</p>
+      <p>Event description. Event description. Event description. </p>
+    </div>
+  </div>
+
+  <div class="card-chat">
+    <%= image_tag 'aidan.jpg', alt: "text", :class => "card-chat-picture" %>
+    <div class="name-online">
+      <h3>Aidan</h3>
+      <p class="online">Online</p>
+    </div>
+  </div>
+
+  <div class= "card-index">
+    <div class= "pictures">
+      <%= image_tag 'lawn.jpg', alt: "text", class: "card-index-picture" %>
+      <%= image_tag 'aidan.jpg', alt: "text", class: "card-index-profile" %>
+    </div>
+    <div class= "description-index">
+      <p class= "location">Sunset in Canggu</p>
+      <div class = "date-pax">
+        <p class="date">20-03-2023</p>
+        <p class="pax">6 hours - Max 25 people</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="explore">
+    <i class="fa-regular fa-map"></i>
+    <p class="title-navbar">Explore</p>
+  </div>
+  <div class="create">
+    <i class="fa-regular fa-plus"></i>
+    <p class="title-navbar">Create</p>
+  </div>
+  <div class="chat">
+    <i class="fa-regular fa-message"></i>
+    <p class="title-navbar">Chat</p>
+  </div>
+  <div class="dashboard">
+    <i class="fa-regular fa-user"></i>
+    <p class="title-navbar">Dashboard</p>
+  </div>
+</div>
