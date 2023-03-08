@@ -5,4 +5,6 @@ class Activity < ApplicationRecord
   has_many_attached :photos
   has_many :bookings
   has_many :attendees, through: :bookings, source: :user
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

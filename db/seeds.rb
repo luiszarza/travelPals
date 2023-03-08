@@ -31,7 +31,7 @@ user1.save
  activity = Activity.create!(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
-    location: "Bali",
+    location: "Canggu, Bali",
     time: DateTime.new(2023, 10, 3, 18, 0, 0),
     user_id: user1.id
 )
@@ -56,7 +56,7 @@ user2.save
  activity = Activity.create!(
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
-    location: "Tokyo",
+    location: "Tokyo, Japan",
     time: DateTime.new(2023, 5, 5, 13, 30, 0),
     user_id: user2.id
   )
@@ -81,7 +81,7 @@ user3.save
   activity = Activity.create!(
     title: "Kayaking in Halong Bay",
     description: "Explore the stunning limestone karsts and crystal-clear waters of Halong Bay on this kayaking adventure. We'll paddle through hidden lagoons and explore secluded beaches. No kayaking experience necessary!",
-    location: "Halong Bay",
+    location: "Halong Bay, Vietnam",
     time: DateTime.new(2023, 8, 7, 10, 15, 0),
     user_id: user3.id
   )
@@ -107,7 +107,7 @@ user4.save
   activity = Activity.create!(
     title: "Cooking class in Tuscany",
     description: "Indulge your passion for food and wine with this cooking class in the heart of Tuscany. You'll learn how to make classic Italian dishes using fresh, seasonal ingredients, and enjoy a delicious meal paired with local wines.",
-    location: "Tuscany",
+    location: "Tuscany, Italy",
     time: DateTime.new(2023, 6, 10, 19, 45, 0),
     user_id: user4.id
   )
@@ -132,7 +132,7 @@ user5.save
   activity = Activity.create!(
     title: "Surfing lessons in Byron Bay",
     description: "Experience the thrill of surfing with expert instructors in the beautiful beach town of Byron Bay. Whether you're a beginner or an experienced surfer, you'll improve your skills and have a blast in the waves.",
-    location: "Byron Bay",
+    location: "Byron Bay, Australia",
     time: DateTime.new(2023, 7, 12, 8, 0, 0),
     user_id: user5.id
   )
@@ -256,7 +256,7 @@ user10.save
   activity = Activity.create!(
   title: "Yoga Retreat in Bali",
   description: "Escape to paradise and unwind with a yoga retreat in Bali. This retreat includes a yoga class, guided meditation, and workshops on mindfulness and self-care. Relax in the beautiful surroundings of Bali and connect with like-minded individuals.",
-  location: "Bali, Indonesia",
+  location: "Canggu, Bali",
   time: DateTime.new(2023, 7, 26, 11, 15, 0),
   user_id: user10.id)
 
@@ -280,7 +280,7 @@ user11.save
   activity = Activity.create!(
   title: "Safari in Serengeti National Park",
   description: "Embark on a safari adventure in the heart of Serengeti National Park in Tanzania. This tour will take you on a journey through the African wilderness where you'll see a variety of wildlife, including lions, elephants, and giraffes. Stay in luxury tents and enjoy the stunning views of the savannah.",
-  location: "Serengeti National Park, Tanzania",
+  location: "Tanzania, Africa",
   time: DateTime.new(2023, 10, 28, 9, 30, 0),
   user_id: user11.id)
 
@@ -402,7 +402,7 @@ user16.save
   activity = Activity.create!(
   title: "Wine Tasting Tour",
   description: "Join us for a tour of some of the best wineries in the Napa Valley. We'll learn about the history and process of wine making, and of course, taste some delicious wines along the way. Lunch will be provided at one of the wineries.",
-  location: "Napa Valley, USA",
+  location: "Napa Valley, California",
   time: DateTime.new(2024, 1, 15, 11, 30, 0),
   user_id: user16.id)
 
@@ -458,3 +458,10 @@ user18.save
 puts "Attaching photo 18"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
+
+30.times do
+  Booking.create(
+    activity: Activity.all.sample,
+    user: User.all.sample
+  )
+end
