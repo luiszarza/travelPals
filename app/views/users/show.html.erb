@@ -7,7 +7,6 @@
   <a href="/chats" class="btn btn-info" role="button">Link Button</a>
 </div>
 <div>
-<%= console %>
   <p><strong>Going to / Organizing</strong></p>
   <% @user.attending_activities.each do |activity| %>
       <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
@@ -20,7 +19,7 @@
    <% @user.organized_activities.each do |activity| %>
       <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
       <h3><%= activity.title %></h3>
-      <p><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+      <p><%= activity.time.strftime('%a, %b %e • %R') %></p>
       <p><%= activity.location %></p>
       <p><%= activity.description %></p>
       <p><%= activity.user.name %></p>

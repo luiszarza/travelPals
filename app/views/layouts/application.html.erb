@@ -15,11 +15,17 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <div class="inner-cont">
+    <% unless action_name == "home" %>
+      <div class="inner-cont">
+    <% end %>
       <%= yield %>
+    <% unless action_name == "home" %>
     </div>
+    <% end %>
     <% if user_signed_in? %>
-      <%= render "shared/navbar" %>
+      <% unless action_name == "home" %>
+        <%= render "shared/navbar" %>
+      <% end %>
     <% end %>
   </body>
 </html>
