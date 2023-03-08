@@ -25,9 +25,9 @@
        </div>
       <% if @activity.bookings.any? %>
         <div>
-          <p><strong>Participants:</strong></p>
-          <% @activity.bookings.each do |booking| %>
-            <%= cl_image_tag booking.user.photo.key, width: 50, height: 50, class: "rounded-circle mr-2" %>
+          <p><strong>Who's going:</strong></p>
+          <% @activity.attendees.each do |attendee| %>
+            <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "rounded-circle mr-2" %>
           <% end %>
         </div>
       <% end %>
