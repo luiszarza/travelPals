@@ -4,6 +4,31 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+    <div class="mb-3">
+      <%= f.input :name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "name", class: "form-control", placeholder: "First Name" }%>
+    </div>
+    <div class="mb-3">
+      <%= f.input :age,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "age", class: "form-control", placeholder: "Age" }%>
+    </div>
+    <div class="mb-3">
+      <%= f.input :bio,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "bio", class: "form-control", placeholder: "Bio" }%>
+    </div>
+    <div class="mb-3">
+      <%= f.input :photo,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "photo", class: "form-control", placeholder: "Photo" }%>
+    </div>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
