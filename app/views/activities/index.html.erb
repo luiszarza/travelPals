@@ -1,19 +1,21 @@
-  <div class="container">
-    <div class="row g-4 mt-4 flex-column" >
-    <h4> <%= @activities.count %> activities</h4>
-      <% @activities.each do |activity| %>
-        <div class="col m-2 border">
-            <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-img-top" %>
-              <div class="card profile-card-5">
-                <div class="card-body pt-0">
-                  <%= link_to activity, class: "text-decoration-none" do %>
-                  <h5 ><%= activity.title %></h5>
-                  <% end %>
-                  <p>Location: <%= activity.location %></p>
-                  <p>Date: <%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
-                </div>
-              </div>
-            </div>
-      <% end %>
+<div id="activities">
+  <form action="#" method="GET" class="search-form">
+    <input type="search" class="search-term" placeholder="Search for location or activity">
+    <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+    <%# <input type="submit" class="button-search" value="Search"> %>
+  </form>
+
+  <h4><%= @activities.count %> activities</h4>
+  <% @activities.each do |activity| %>
+    <div class="card-index">
+      <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
+      <div class= "description-index">
+        <%= link_to activity do %>
+          <h5 class= "title"><%= activity.title %></h5>
+        <% end %>
+        <%# <p><%= activity.location %></p> %>
+        <p class="date"><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
+</div>
