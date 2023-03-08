@@ -11,6 +11,13 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @already_booked = Booking.where(activity: @activity, user: current_user).any?
     @booking = Booking.new
+    @activities = Activity.where(id: params[:id])
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
     if @already_booked
       @booking = Booking.find_by(activity: @activity, user: current_user)
     end
