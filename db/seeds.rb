@@ -36,7 +36,7 @@ user1.save
     user_id: user1.id
 )
 
-file = URI.open("https://source.unsplash.com/random/430x650/?hike-mount-batur")
+file = URI.open("https://source.unsplash.com/random/650x430/?hike-mount-batur")
 puts "Attaching photo 1"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -61,7 +61,7 @@ user2.save
     user_id: user2.id
   )
 
-file = URI.open("https://source.unsplash.com/random/430x650/?sushi")
+file = URI.open("https://source.unsplash.com/random/650x430/?sushi")
 puts "Attaching photo 2"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -86,7 +86,7 @@ user3.save
     user_id: user3.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?halong-bay")
+  file = URI.open("https://source.unsplash.com/random/650x430/?halong-bay")
 puts "Attaching photo 3"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -112,7 +112,7 @@ user4.save
     user_id: user4.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?italian-food")
+  file = URI.open("https://source.unsplash.com/random/650x430/?italian-food")
 puts "Attaching photo 4"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -137,7 +137,7 @@ user5.save
     user_id: user5.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?surfing")
+  file = URI.open("https://source.unsplash.com/random/650x430/?surfing")
 puts "Attaching photo 5"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -161,7 +161,7 @@ user6.save
   time: DateTime.new(2023, 9, 15, 16, 30, 0),
   user_id: user6.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?surfing")
+  file = URI.open("https://source.unsplash.com/random/650x430/?surfing")
   puts "Attaching photo 6"
   activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
   activity.save
@@ -185,7 +185,7 @@ user7.save
   time: DateTime.new(2023, 5, 18, 12, 0, 0),
   user_id: user7.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?thai-food")
+  file = URI.open("https://source.unsplash.com/random/650x430/?thai-food")
 puts "Attaching photo 7"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -210,7 +210,7 @@ user8.save
   time: DateTime.new(2023, 4, 20, 10, 0, 0),
   user_id: user8.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?napa-valley")
+  file = URI.open("https://source.unsplash.com/random/650x430/?napa-valley")
 puts "Attaching photo 8"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -235,7 +235,7 @@ user9.save
   time: DateTime.new(2023, 6, 23, 14, 45, 0),
   user_id: user9.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?tuscany")
+  file = URI.open("https://source.unsplash.com/random/650x430/?tuscany")
 puts "Attaching photo 9"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -260,7 +260,7 @@ user10.save
   time: DateTime.new(2023, 7, 26, 11, 15, 0),
   user_id: user10.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?yoga")
+  file = URI.open("https://source.unsplash.com/random/650x430/?yoga")
 puts "Attaching photo 10"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -284,7 +284,7 @@ user11.save
   time: DateTime.new(2023, 10, 28, 9, 30, 0),
   user_id: user11.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?safari")
+  file = URI.open("https://source.unsplash.com/random/650x430/?safari")
 puts "Attaching photo 11"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -308,7 +308,7 @@ user12.save
   time: DateTime.new(2023, 5, 2, 17, 0, 0),
   user_id: user12.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?snowboarding")
+  file = URI.open("https://source.unsplash.com/random/650x430/?snowboarding")
 puts "Attaching photo 12"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -333,7 +333,7 @@ user13.save
   time: DateTime.new(2023, 11, 5, 10, 45, 0),
   user_id: user13.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?sailing")
+  file = URI.open("https://source.unsplash.com/random/650x430/?sailing")
 puts "Attaching photo 13"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -357,7 +357,7 @@ user14.save
   time: DateTime.new(2024, 1, 8, 15, 15, 0),
   user_id: user14.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?bangkok")
+  file = URI.open("https://source.unsplash.com/random/650x430/?bangkok")
 puts "Attaching photo 14"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -381,7 +381,7 @@ user15.save
   time: DateTime.new(2024, 1, 11, 14, 0, 0),
   user_id: user15.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?rafting")
+  file = URI.open("https://source.unsplash.com/random/650x430/?rafting")
 puts "Attaching photo 15"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -406,7 +406,7 @@ user16.save
   time: DateTime.new(2024, 1, 15, 11, 30, 0),
   user_id: user16.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?wine")
+  file = URI.open("https://source.unsplash.com/random/650x430/?wine")
 puts "Attaching photo 16"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -430,7 +430,7 @@ user17.save
   time: DateTime.new(2024, 1, 18, 9, 0, 0),
   user_id: user17.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?nepal")
+  file = URI.open("https://source.unsplash.com/random/650x430/?nepal")
 puts "Attaching photo 17"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -454,7 +454,7 @@ user18.save
   time: DateTime.new(2024, 1, 22, 19, 0, 0),
   user_id: user18.id)
 
-  file = URI.open("https://source.unsplash.com/random/430x650/?scuba")
+  file = URI.open("https://source.unsplash.com/random/650x430/?scuba")
 puts "Attaching photo 18"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
