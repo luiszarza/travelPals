@@ -1,0 +1,162 @@
+.container {
+  background-color: #F4F9FE;
+}
+.card-map-image {
+  background-color: white;
+  border-radius: 42px;
+  display: flex;
+  padding: 18px;
+  height: 317px;
+  flex-direction: column;
+}
+
+.img-map {
+  height: 198px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.location-date {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-right: 17px;
+  padding-top: 18px;
+}
+
+
+.location {
+  font-size: 16px;
+}
+
+.date {
+  color: $orange
+}
+
+.country {
+  color: grey;
+  font-size: 14px;
+}
+
+.fa-sharp {
+  color: $orange;
+}
+
+.card-profile {
+  background-color: #FF9778;
+  width: 100%;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+}
+
+.card-profile-picture {
+  border-radius: 100%;
+  height: 145px;
+  width: 145px;
+  -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+}
+
+h3, h4 {
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 10px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+.card-event {
+  background-color: white;
+  width: 100%;
+  height: 195px;
+  border-radius: 40px;
+  padding-top: 20px;
+  padding-left: 20px;
+  display: flex;
+}
+
+.monkey {
+  height: 156px;
+  width: auto;
+  border-radius: 35px;
+}
+
+.description {
+  padding-left: 10px;
+}
+
+.card-chat {
+  background-color: #FF9778;
+    width: 100%;
+    border-radius: 35px;
+    display: flex;
+    margin-top: 15px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 30px;
+    box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+}
+
+.card-chat-picture {
+  border-radius: 100%;
+  height: 75px;
+  width: 75px;
+  -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+  margin-left: 15px;
+}
+
+.name-online {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: flex-start;
+}
+
+.online {
+  color: #BBE2C6;
+  font-weight: 500;
+}
+
+.card-index {
+  position: relative;
+}
+
+.card-index-picture {
+  width: 100%;
+  height: 211px;
+  border-radius: 35px;
+  margin-top: 15px;
+}
+
+.card-index-profile {
+  border-radius: 100%;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  right: -3px;
+  bottom: -10px;
+}
