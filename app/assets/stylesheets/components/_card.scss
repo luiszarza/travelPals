@@ -141,7 +141,7 @@ h4 {
   font-weight: 500;
 }
 
-.card-index {
+.pictures {
   position: relative;
 }
 
@@ -159,4 +159,18 @@ h4 {
   position: absolute;
   right: -3px;
   bottom: -10px;
+}
+
+.date-pax {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location {
+  font-weight: 600;
+}
+
+.descripton-index {
+  display: flex;
+  flex-direction: column;
 }
