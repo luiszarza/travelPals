@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :organized_activities, class_name: "Activity", foreign_key: :user_id
   has_many :bookings, dependent: :destroy
   has_many :attending_activities, through: :bookings, source: :activity
-
 end
