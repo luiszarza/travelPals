@@ -3,15 +3,15 @@
     <i class="fa-regular fa-map"></i>
     <p class="title-navbar">Explore</p>
   <% end %>
-  <%= link_to activities_path, class: "nav-link" do %>
+  <%= link_to new_activity_path, class: "nav-link" do %>
     <i class="fa-regular fa-plus"></i>
     <p class="title-navbar">Create</p>
   <% end %>
-  <%= link_to activities_path, class: "nav-link" do %>
+  <%= link_to chats_path, class: "nav-link" do %>
     <i class="fa-regular fa-message"></i>
-    <p class="title-navbar">Chat</p>
+    <p class="title-navbar">Chats</p>
   <% end %>
-  <%= link_to activities_path, class: "nav-link" do %>
+  <%= link_to user_path(current_user), class: "nav-link" do %>
     <i class="fa-regular fa-user"></i>
     <p class="title-navbar">Dashboard</p>
   <% end %>
