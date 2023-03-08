@@ -11,6 +11,9 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @already_booked = Booking.where(activity: @activity, user: current_user).any?
     @booking = Booking.new
+    if @already_booked
+      @booking = Booking.find_by(activity: @activity, user: current_user)
+    end
   end
 
   def new
