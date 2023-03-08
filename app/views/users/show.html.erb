@@ -1,5 +1,28 @@
-<h1><%= @user.name || "Mr Nobody" %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p><strong>Going to / Organizing</strong></p>
-<a href="/chats" class="btn btn-info" role="button">Link Button</a>
+<div>
+  <%= cl_image_tag @user.photo.key %>
+  <h1><%= @user.name || "Mr Nobody" %></h1>
+  <%= @user.age%>
+  <p><strong>About me</strong></p>
+  <%= @user.bio%>
+  <a href="/chats" class="btn btn-info" role="button">Link Button</a>
+</div>
+<div>
 <%= console %>
+  <p><strong>Going to / Organizing</strong></p>
+  <% @user.attending_activities.each do |activity| %>
+      <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
+      <h3><%= activity.title %></h3>
+      <p><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+      <p><%= activity.location %></p>
+      <p><%= activity.description %></p>
+      <p><%= activity.user.name %></p>
+  <% end %>
+   <% @user.organized_activities.each do |activity| %>
+      <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
+      <h3><%= activity.title %></h3>
+      <p><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+      <p><%= activity.location %></p>
+      <p><%= activity.description %></p>
+      <p><%= activity.user.name %></p>
+  <% end %>
+</div>
