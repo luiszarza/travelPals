@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @already_booked = Booking.where(activity: @activity, user: current_user).any?
     @booking = Booking.new
   end
 
