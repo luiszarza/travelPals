@@ -1,33 +1,38 @@
-<div>
-  <%= cl_image_tag @activity.user.photo.key %>
-  <%= cl_image_tag @activity.photos.first.key%>
+<div class= "pictures">
+  <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
+  <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
 </div>
 <div>
-  <div>
-    <h3 class="mt-3"><%= @activity.title %></h3>
+  <div class= "description-index">
+    <h3 class="title"><%= @activity.title %></h3>
+    <div>
+      <p class="date"><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+    </div>
     <% if @already_booked == true %>
-      <%= link_to "Joined!", activity_booking_path(@activity, @booking), data: { turbo_method: :delete }, class: "btn btn-secondary" %>
+     <div class="btn-join">
+      <%= link_to "Joined!", activity_booking_path(@activity, @booking), data: { turbo_method: :delete }, class: "button-joined" %>
     <% else %>
-      <h3><strong><%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "btn btn-primary" %></strong></h3>
+      <%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "button-join" %>
+    </div>
     <% end %>
   </div>
+
+
   <div>
-    <p><strong>Date: </strong><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
-  </div>
-  <div>
-    <p><strong>Location: </strong><%=@activity.location %></p>
-  </div>
-  <div>
-    <p><strong>Details:</strong></p>
-    <p><%= @activity.description %></p>
+    <p class="details">Details</p>
+    <p class="description"><%= @activity.description %></p>
     </div>
-  <% if @activity.bookings.any? %>
-    <div>
-      <p><strong>Who's going:</strong></p>
+    <div class="participants">
+      <p class="details">Who's going</p>
       <% @activity.attendees.each do |attendee| %>
-        <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "rounded-circle mr-2" %>
+        <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
       <% end %>
     </div>
+    <div>
+    <p class="details">Location<br><%=@activity.location %></p>
+  </div>
+  <% if @activity.bookings.any? %>
+
   <% end %>
 </div>
 <div style="width: 100%; height: 600px;"
