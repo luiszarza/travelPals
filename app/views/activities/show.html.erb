@@ -1,49 +1,56 @@
-<div class= "pictures">
-  <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
-  <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
-</div>
-<div>
-  <div class= "description-index">
-    <h3 class="title"><%= @activity.title %></h3>
-    <div>
-      <p class="date"><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
-    </div>
-    <% if @already_booked == true %>
-     <div class="btn-join">
-      <%= link_to "Joined!", activity_booking_path(@activity, @booking), data: { turbo_method: :delete }, class: "button-joined" %>
-    <% else %>
-      <%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "button-join" %>
-    </div>
-    <% end %>
+<div id="activities-show">
+  <div class= "pictures">
+    <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
+    <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
   </div>
-
-
   <div>
-    <p class="details">Details</p>
-    <p class="description"><%= @activity.description %></p>
-  </div>
-   <div>
-      <div class="participants">
-        <% if @activity.bookings.any? %>
-          <div>
-              <p class="details">Who's going</p>
-              <% @activity.attendees.each do |attendee| %>
-                <%= link_to user_path(attendee), class: "card-index-going" do %>
-                  <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-profile rounded-circle" %>
-                <% end %>
-              <% end %>
-          </div>
-          <div>
-            <p class="details">Location<br><%=@activity.location %></p>
-          </div>
+    <div class= "description-index">
+      <h3 class="title"><%= @activity.title %></h3>
+      <div>
+        <p class="date"><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+      </div>
+      <div class="btn-join">
+        <% if @already_booked == true %>
+          <%= link_to "Joined!", activity_booking_path(@activity, @booking), data: { turbo_method: :delete }, class: "button-joined" %>
+        <% else %>
+          <%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "button-join ms-auto" %>
         <% end %>
       </div>
     </div>
-</div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+    <div>
+      <p class="details">Details</p>
+      <p class="description"><%= @activity.description %></p>
+    </div>
+    <div>
+        <div class="participants">
+          <% if @activity.bookings.any? %>
+            <div>
+              <p class="details">Who's going</p>
+              <% @activity.attendees.each do |attendee| %>
+                  <%= link_to user_path(attendee), class: "card-index-going" do %>
+                    <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
+                  <% end %>
+                <% end %>
+            </div>
+        </div>
+        <div>
+          <p class="details">Location<br></p><%=@activity.location %>
+        </div>
+          <% end %>
+
+      </div>
+  </div>
+  <div class="map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <% if @activity.user == current_user %>
+        <%= link_to "Edit |", edit_activity_path(@activity), class: "link-edit" %>
+        <%= link_to "Delete", activity_path(@activity), method: :delete, data: { confirm: "Are you sure?" }, class: "link-delete" %>
+      <% end %>
 </div>
 <div>
   <% if @activity.user == current_user %>
