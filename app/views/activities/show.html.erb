@@ -48,13 +48,10 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <% if @activity.user == current_user %>
-        <%= link_to "Edit |", edit_activity_path(@activity), class: "link-edit" %>
-        <%= link_to "Delete", activity_path(@activity), method: :delete, data: { confirm: "Are you sure?" }, class: "link-delete" %>
+        <div class="edit_delete">
+          <%= link_to "Edit |", edit_activity_path(@activity), class: "link-edit" %>
+          <%= link_to "Delete", activity_path(@activity), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "link-delete" %>
+
+        </div>
       <% end %>
-</div>
-<div>
-  <% if @activity.user == current_user %>
-    <%= link_to "Edit |", edit_activity_path(@activity) %>
-    <%= link_to "Delete", activity_path(@activity), data: { turbo_method: :delete } %>
-  <% end %>
 </div>
