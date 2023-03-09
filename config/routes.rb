@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
-  resources :chats, only: [:show, :index]
+  resources :chatrooms, only: [:show, :index]
 end

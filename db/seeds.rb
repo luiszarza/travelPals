@@ -465,3 +465,9 @@ activity.save
     user: User.all.sample
   )
 end
+
+30.times do
+  Chatroom.create(
+    name: User.all.sample,
+  )
+end
