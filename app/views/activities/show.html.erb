@@ -15,6 +15,9 @@
       <%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "button-join" %>
     </div>
     <% end %>
+     <% if @activity.user == current_user %>
+      <%= link_to "Edit", edit_activity_path(@activity) %>
+    <% end %>
   </div>
 
 
