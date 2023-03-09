@@ -34,11 +34,15 @@ body {
 .booking-cal {
   color: #c8c8c8;
   position: absolute;
-  top: 10px;
+  top: 19px;
   z-index: 0;
   font-size: 18px;
   right: 16px;
 }
 .activity_time {
   position: relative;
+}
+
+.activity_time input {
+  cursor: pointer;
 }
