@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage">
+    <%= image_tag 'logo.png', alt: "text", class:"logo" %>
+    <p class="tagline">Travel the world, meet lifelong friends</p>
+    <div>
+      <%= link_to "Log in", new_user_session_path, class: "button-rectangle-orange" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "button-rectangle-white" %>
+    </div>
+</div>
