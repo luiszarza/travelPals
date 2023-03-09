@@ -28,14 +28,16 @@
     <div class="participants">
       <p class="details">Who's going</p>
       <% @activity.attendees.each do |attendee| %>
-        <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
+        <%= link_to user_path(attendee), class: "card-index-going" do %>
+          <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-profile rounded-circle" %>
+        <% end %>
       <% end %>
     </div>
     <div>
-    <p class="details">Location<br><%=@activity.location %></p>
+      <p class="details">Location<br><%=@activity.location %></p>
+    </div>
   </div>
   <% if @activity.bookings.any? %>
-
   <% end %>
 </div>
 <div style="width: 100%; height: 600px;"
