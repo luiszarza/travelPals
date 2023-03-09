@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 18 }
   validates :photo, presence: true
+  has_many :chatrooms
+  has_many :chatrooms_as_recipient, class_name: "Chatroom", foreign_key: :recipient_id
 end
