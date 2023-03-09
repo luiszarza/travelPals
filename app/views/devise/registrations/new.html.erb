@@ -1,4 +1,7 @@
-<h2>Sign up</h2>
+<div class="welcome-banner">
+  <h2 class="hello">Get started</h2>
+  <h4 class= "create-account">Create your account now</h4>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
@@ -9,41 +12,47 @@
       <%= f.input :name,
                   required: true,
                   autofocus: true,
+                  label: false,
                   input_html: { autocomplete: "name", class: "form-control", placeholder: "First Name" }%>
     </div>
     <div class="mb-3">
       <%= f.input :age,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "age", class: "form-control", placeholder: "Age" }%>
+                  label: false,
+                  input_html: { autocomplete: "age", class: "form-control-signup", placeholder: "Age" }%>
     </div>
     <div class="mb-3">
       <%= f.input :bio,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "bio", class: "form-control", placeholder: "Bio" }%>
+                  label: false,
+                  input_html: { autocomplete: "bio", class: "form-control-signup", placeholder: "Bio" }%>
     </div>
     <div class="mb-3">
       <%= f.input :photo,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "photo", class: "form-control", placeholder: "Photo" }%>
+                  input_html: { autocomplete: "photo", class: "form-control-signup", placeholder: "Photo" }%>
     </div>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: false,
+                input_html: { autocomplete: "email", placeholder: "Enter your email"  }%>
     <%= f.input :password,
                 required: true,
+                label: false,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", placeholder: "Enter your password" } %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                label: false,
+                input_html: { autocomplete: "new-password", placeholder: "Re-enter your password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "button-rectangle-orange-signup" %>
   </div>
 <% end %>
 
