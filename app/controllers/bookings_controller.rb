@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to activities_path
+    redirect_to activities_path, alert: "You have left the activity."
   end
 
   def create
