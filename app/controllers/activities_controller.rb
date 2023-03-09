@@ -43,8 +43,12 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(activity_params)
-    redirect_to activity_path(@activity)
+
+    if @activity.update(activity_params)
+        redirect_to activity_path(@activity)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
