@@ -15,14 +15,4 @@
     <i class="fa-regular fa-user"></i>
     <p class="title-navbar">Dashboard</p>
   <% end %>
-  <div class="nav-link">
-    <%= link_to new_user_session_path do %>
-      <i class="fa-solid fa-right-to-bracket"></i>
-      Log in
-    <% end %>
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-      <i class="fa-solid fa-power-off"></i>
-      Log out
-    <% end %>
-  </div>
 </div>
