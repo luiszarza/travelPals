@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def confirmation
+    @booking = Booking.find(params[:id])
   end
 
   def destroy
