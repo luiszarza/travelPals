@@ -11,6 +11,9 @@
 @import "components/index";
 @import "pages/index";
 
+//Flatpicker
+@import "flatpickr/dist/flatpickr";
+
 body {
   max-width: 414px;
   margin: auto;
@@ -20,4 +23,21 @@ body {
 .inner-cont {
   background-color: #F4F9FE;
   padding: 6%;
+}
+
+.flatpickr-calendar.animate.open {
+  right: auto !important;
+  margin-left: 26px;
+}
+
+.booking-cal {
+  color: #c8c8c8;
+  position: absolute;
+  top: 10px;
+  z-index: 0;
+  font-size: 18px;
+  right: 16px;
+}
+.activity_time {
+  position: relative;
 }
