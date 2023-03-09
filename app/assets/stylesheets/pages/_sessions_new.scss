@@ -1,0 +1,34 @@
+.hello {
+  font-family: "montserrat";
+  font-size: 22px;
+  text-align: center;
+  margin-top: 25%;
+  margin-bottom: 27%;
+}
+
+.form-control {
+  width: 100%;
+  height: 58px;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  border: none;
+}
+
+.input-password {
+  margin-top: 12%;
+  margin-bottom: 25%;
+}
+ .sign-up a, .sign-up a:visited, .forgot-password a, .forgot-password a:visited {
+  color: $orange;
+  text-decoration: none !important;
+ }
+
+ .sign-up {
+  text-align: center;
+ }
+
+ .forgot-password {
+  text-align: center;
+  margin-top: 5%;
+ }
