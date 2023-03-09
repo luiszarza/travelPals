@@ -1,3 +1,12 @@
+<nav>
+  <ul>
+    <% if user_signed_in? %>
+      <li class="logout">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
 <div>
   <%= cl_image_tag @user.photo.key %>
   <h1><%= @user.name || "Mr Nobody" %></h1>
@@ -12,20 +21,27 @@
 </div>
 <div>
   <p><strong>Going to / Organizing</strong></p>
-  <% @user.attending_activities.each do |activity| %>
-      <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
-      <h3><%= activity.title %></h3>
-      <p><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
-      <p><%= activity.location %></p>
-      <p><%= activity.description %></p>
-      <p><%= activity.user.name %></p>
+   <p>Organizing</p>
+  <% @user.organized_activities.each do |activity| %>
+      <%= link_to activity_path(activity) do %>
+        <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
+        <h3><%= activity.title %></h3>
+        <p><%= activity.time.strftime('%a, %b %e • %R') %></p>
+        <p><%= activity.location %></p>
+        <p><%= activity.description %></p>
+        <p><%= activity.user.name %></p>
+      <% end %>
   <% end %>
-   <% @user.organized_activities.each do |activity| %>
-      <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
-      <h3><%= activity.title %></h3>
-      <p><%= activity.time.strftime('%a, %b %e • %R') %></p>
-      <p><%= activity.location %></p>
-      <p><%= activity.description %></p>
-      <p><%= activity.user.name %></p>
+  <p>_____________________________________</p>
+  <p>Going to</p>
+  <% @user.attending_activities.each do |activity| %>
+      <%= link_to activity_path(activity) do %>
+        <%= cl_image_tag activity.photos.first.key, class: "img-fluid" %>
+        <h3><%= activity.title %></h3>
+        <p><%= activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+        <p><%= activity.location %></p>
+        <p><%= activity.description %></p>
+        <p><%= activity.user.name %></p>
+      <% end %>
   <% end %>
 </div>
