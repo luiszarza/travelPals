@@ -4,7 +4,11 @@
   <%= @user.age%>
   <p><strong>About me</strong></p>
   <%= @user.bio%>
-  <a href="/chats" class="btn btn-info" role="button">Link Button</a>
+  <% if user_signed_in? && current_user == @user %>
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to "Chat", chats_path(user_id: @user.id), class: "btn btn-info" %>
+  <% end %>
 </div>
 <div>
 <%= console %>
