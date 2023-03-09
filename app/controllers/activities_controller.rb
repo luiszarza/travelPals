@@ -49,7 +49,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to listings_path, status: :see_other
+    redirect_to activities_path, status: :see_other, alert: "Activity deleted"
   end
 
   private
