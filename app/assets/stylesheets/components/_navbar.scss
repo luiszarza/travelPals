@@ -1,16 +1,18 @@
 .navbar {
-  width : 100vw;
+  width : 100%;
   background-color:#FDFDFE;
   color: #A7A8AD;
   display: flex;
   position: sticky;
   bottom: 0;
   padding-top: 20px;
+
   max-width: 414px;
   box-shadow: rgba(0, 0, 0, 0.14) 0px -1px 10px 0px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 82px;
+
 
   .nav-link {
     display: flex;

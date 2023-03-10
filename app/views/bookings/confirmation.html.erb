@@ -10,7 +10,7 @@
         &dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}
         &ctz=#{@booking.activity.time.strftime('%Z')}
         &details=#{@booking.activity.description}
-        &location=#{@booking.activity.location}", class: "btn btn-primary mt-3", target: "_blank" %>
+        &location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
     </div>
   </div>
 </div>
