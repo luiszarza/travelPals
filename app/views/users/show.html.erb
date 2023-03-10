@@ -14,9 +14,9 @@
     <p class="about-me">About me</p>
     <%= @user.bio%>
     <% if user_signed_in? && current_user == @user %>
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Edit Profile", edit_user_registration_path, class: "button-chat" %>
     <% else %>
-      <%= link_to "Chat", chatrooms_path(user_id: @user.id), class: "button-chat" %>
+      <%= link_to "Chat", chatrooms_path(user_id: @user.id), class: "button-chat-edit" %>
     <% end %>
   </div>
   <div class="my-class">
