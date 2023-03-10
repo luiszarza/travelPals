@@ -19,7 +19,6 @@
   </div>
   <div class="my-class">
     <% if @user.organized_activities.present? %>
-      <p class="going-to">Going to / Organizing</p>
       <p class="organizing">Organizing</p>
       <% @user.organized_activities.each do |activity| %>
         <%= link_to activity_path(activity) do %>
