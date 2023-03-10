@@ -6,14 +6,14 @@
 
   <h4 class="activities-count"><%= @activities.count %> activities</h4>
   <% @activities.each do |activity| %>
-    <%= link_to activity do %>
-      <div class="card-index">
-        <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
-        <div class= "description-index">
-          <h5 class= "title"><%= activity.title %></h5>
-          <p class="date"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+      <%= link_to activity do %>
+        <div class="card-index">
+          <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
+          <div class= "description-index">
+            <h5 class= "title"><%= activity.title %></h5>
+            <p class="date"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+          </div>
         </div>
-      </div>
       <% end %>
   <% end %>
 </div>
