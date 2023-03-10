@@ -27,7 +27,7 @@
     <% if @activity.bookings.any? %>
         <div class="participants">
           <div>
-            <p class="details">Who's going</p>
+            <p class="details">Who's going (<%= @activity.attendees.size %>)</p>
               <% @activity.attendees.each do |attendee| %>
                 <%= link_to user_path(attendee), class: "card-index-going" do %>
                   <% if attendee.photo.attached? %>
