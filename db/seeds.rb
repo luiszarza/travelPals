@@ -8,6 +8,8 @@
 require "open-uri"
 
 puts "Cleaning up database..."
+Chatroom.destroy_all
+Message.destroy_all
 Booking.destroy_all
 Activity.destroy_all
 User.destroy_all
@@ -22,7 +24,7 @@ user1 = User.new(
   age: 25
 )
 
-file = URI.open("https://source.unsplash.com/random/250x250/?model")
+file = URI.open("https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")
 puts "Attaching profile photo 1"
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
@@ -36,7 +38,7 @@ user1.save
     user_id: user1.id
 )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?hike-mount-batur")
+file = URI.open("https://images.unsplash.com/photo-1519401515635-cecff1f60e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1190&q=80")
 puts "Attaching photo 1"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -48,7 +50,7 @@ user2 = User.new(
   bio: "Hey there! I'm Jane, a travel enthusiast who loves immersing myself in different cultures and trying new foods. When I'm not on the go, I'm either reading a good book or trying out new recipes in the kitchen. Excited to meet fellow travelers and share experiences!",
   age: 30)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1502323777036-f29e3972d82f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching profile photo 2"
 user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save
@@ -61,7 +63,7 @@ user2.save
     user_id: user2.id
   )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?sushi")
+file = URI.open("https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching photo 2"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -69,11 +71,11 @@ activity.save
 user3 = User.new(
   email: "david@gmail.com",
   password: "abc123",
-  name: "David Kim",
+  name: "David Jones",
   bio: "Hello! I'm David, a seasoned backpacker who loves exploring off-the-beaten-path destinations. When I'm not traveling, I'm probably hiking, surfing or planning my next adventure. Looking forward to meeting like-minded travelers on this app!",
   age: 28)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=838&q=80")
 puts "Attaching profile photo 3"
 user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save
@@ -86,7 +88,7 @@ user3.save
     user_id: user3.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?halong-bay")
+  file = URI.open("https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching photo 3"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -99,7 +101,7 @@ activity.save
   bio: "Hi everyone! I'm Samantha, a foodie and culture lover who loves discovering hidden gems in every city. When I'm not traveling, I'm either trying out new recipes in the kitchen or catching up on my favorite TV shows. Can't wait to connect with fellow travelers!",
   age: 32)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1567367182540-f60825d65478?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80")
 puts "Attaching profile photo 4"
 user4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user4.save
@@ -112,7 +114,7 @@ user4.save
     user_id: user4.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?italian-food")
+  file = URI.open("https://images.unsplash.com/photo-1552598715-7eeb9232a2ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 4"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -124,7 +126,7 @@ activity.save
   bio: "Hello, I'm Peter, a digital nomad who loves exploring new places while working remotely. I'm passionate about sustainable tourism and making a positive impact on the destinations I visit. Looking forward to meeting other travelers and exchanging ideas!",
   age: 27)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1584316712724-f5d4b188fee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80l")
 puts "Attaching profile photo 5"
 user5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user5.save
@@ -137,7 +139,7 @@ user5.save
     user_id: user5.id
   )
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?surfing")
+  file = URI.open("https://images.unsplash.com/photo-1559518953-68d1e1945a3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80")
 puts "Attaching photo 5"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -149,7 +151,7 @@ activity.save
   bio: "Hey there! I'm Elizabeth, a nature lover and adventure seeker who enjoys hiking, camping, and rock climbing. I'm always up for trying something new and meeting new people along the way. Excited to connect with fellow travelers on this app!",
   age: 29)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80")
 puts "Attaching profile photo 6"
 user6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user6.save
@@ -161,7 +163,7 @@ user6.save
   time: DateTime.new(2023, 9, 15, 16, 30, 0),
   user_id: user6.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?surfing")
+  file = URI.open("https://images.unsplash.com/photo-1588440485271-59242721d4b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
   puts "Attaching photo 6"
   activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
   activity.save
@@ -173,7 +175,7 @@ user6.save
   bio: "Hi, I'm Alex, a cultural explorer who loves learning about different traditions and customs. I enjoy visiting museums, historical sites, and attending festivals. Looking forward to sharing my experiences with other travelers on this app!",
   age: 31)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching profile photo 7"
 user7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user7.save
@@ -185,7 +187,7 @@ user7.save
   time: DateTime.new(2023, 5, 18, 12, 0, 0),
   user_id: user7.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?thai-food")
+  file = URI.open("https://images.unsplash.com/photo-1508009603885-50cf7c579365?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80")
 puts "Attaching photo 7"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -198,7 +200,7 @@ activity.save
   bio: "Hello everyone! I'm Lisa, a solo traveler who loves immersing myself in new cultures and meeting locals. I enjoy trying out new foods, attending cultural events, and taking photographs. Looking forward to connecting with fellow travelers on this app!",
   age: 26)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1517630800677-932d836ab680?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 8"
 user8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user8.save
@@ -210,7 +212,7 @@ user8.save
   time: DateTime.new(2023, 4, 20, 10, 0, 0),
   user_id: user8.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?napa-valley")
+  file = URI.open("https://images.unsplash.com/photo-1572913017567-02f0649bc4fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
 puts "Attaching photo 8"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -223,19 +225,19 @@ activity.save
   bio: "Hey, I'm James, a beach bum who loves sun, sand, and surfing. I'm always on the lookout for new surf spots and hidden beaches. When I'm not in the water, I'm usually reading a good book or hanging out with friends. Can't wait to connect with other travelers who share my love for the ocean!",
   age: 33)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 9"
 user9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user9.save
 
-  activity = Activity.new(
-  title: "Cooking Class in Tuscany",
-  description: "Learn to cook authentic Italian dishes in the beautiful countryside of Tuscany. This hands-on cooking class will teach you how to make pasta from scratch, as well as traditional Tuscan sauces and desserts. Enjoy a glass of local wine while admiring the stunning views of the rolling hills.",
-  location: "Tuscany, Italy",
+activity = Activity.new(
+  title: "Street Walking Tour",
+  description: "Explore the charming streets of Antwerp on this walking tour. Learn about the city's history, culture, and architecture as you stroll through its picturesque neighborhoods. Marvel at the stunning medieval buildings and admire the art and design that make Antwerp a hub of creativity. Don't miss this opportunity to discover the hidden gems and local secrets of one of Europe's most beautiful cities.",
+  location: "Antwerp, Belgium",
   time: DateTime.new(2023, 6, 23, 14, 45, 0),
   user_id: user9.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?tuscany")
+  file = URI.open("https://images.unsplash.com/photo-1502991644659-e8aa151f8389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 9"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -248,7 +250,7 @@ activity.save
   bio: "Hi there! I'm Lily, a travel photographer who loves capturing the beauty of different cultures and landscapes. When I'm not on the road, I'm either editing my photos or trying out new recipes. Looking forward to connecting with fellow travelers and sharing my photos and experiences!",
   age: 28)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 10"
 user10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user10.save
@@ -260,7 +262,7 @@ user10.save
   time: DateTime.new(2023, 7, 26, 11, 15, 0),
   user_id: user10.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?yoga")
+  file = URI.open("https://images.unsplash.com/photo-1584937005173-c307e769aa24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 10"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -272,7 +274,7 @@ activity.save
   bio: "Hey, I'm Michael, a history buff who loves exploring historical landmarks and museums. I'm also a fan of trying out local cuisines and discovering hidden gems in every city. Looking forward to connecting with fellow travelers and sharing my experiences!",
   age: 35)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=848&q=80")
 puts "Attaching profile photo 11"
 user11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user11.save
@@ -284,7 +286,7 @@ user11.save
   time: DateTime.new(2023, 10, 28, 9, 30, 0),
   user_id: user11.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?safari")
+  file = URI.open("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80")
 puts "Attaching photo 11"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -296,7 +298,7 @@ activity.save
   bio: "Hello everyone! I'm Emily, an adrenaline junkie who loves extreme sports such as skydiving, bungee jumping, and scuba diving. I'm always up for a challenge and pushing myself to the limit. Looking forward to meeting other adventurous travelers on this app!",
   age: 30)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1529509127685-aec73ebb6969?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching profile photo 12"
 user12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user12.save
@@ -308,7 +310,7 @@ user12.save
   time: DateTime.new(2023, 5, 2, 17, 0, 0),
   user_id: user12.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?snowboarding")
+  file = URI.open("https://images.unsplash.com/photo-1555204057-c9828fa945e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
 puts "Attaching photo 12"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -321,7 +323,7 @@ activity.save
   bio: "Hi, I'm Adam, a business traveler who enjoys exploring new cities during my downtime. I'm a fan of trying out local foods and experiencing the nightlife. Looking forward to connecting with other professionals who share my love for travel!",
   age: 40)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
 puts "Attaching profile photo 13"
 user13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user13.save
@@ -333,7 +335,7 @@ user13.save
   time: DateTime.new(2023, 11, 5, 10, 45, 0),
   user_id: user13.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?sailing")
+  file = URI.open("https://images.unsplash.com/photo-1674816795437-530a26e02624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
 puts "Attaching photo 13"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -345,7 +347,7 @@ activity.save
   bio: "Hey there! I'm Sara, a backpacker who loves immersing myself in local cultures and meeting new people. I'm always on the lookout for budget-friendly ways to travel and experience new destinations. Excited to connect with fellow backpackers and share tips and experiences!",
   age: 23)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80")
 puts "Attaching profile photo 14"
 user14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user14.save
@@ -357,7 +359,7 @@ user14.save
   time: DateTime.new(2024, 1, 8, 15, 15, 0),
   user_id: user14.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?bangkok")
+  file = URI.open("https://images.unsplash.com/photo-1559314809-0d155014e29e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 14"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -369,7 +371,7 @@ activity.save
   bio: "Hello, I'm Jason, a nature lover and outdoor enthusiast who enjoys hiking, camping, and kayaking. I'm always up for an adventure and exploring new trails and waterways. Looking forward to connecting with fellow nature lovers on this app!",
   age: 26)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1520975764749-7397d17130a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 15"
 user15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user15.save
@@ -381,7 +383,7 @@ user15.save
   time: DateTime.new(2024, 1, 11, 14, 0, 0),
   user_id: user15.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?rafting")
+  file = URI.open("https://images.unsplash.com/photo-1629248457649-b082812aea6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 15"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -394,19 +396,19 @@ activity.save
   bio: "Hi everyone! I'm Tiffany, a cultural enthusiast who loves learning about different traditions and customs. I enjoy attending festivals, visiting museums, and trying out local foods. Looking forward to sharing my experiences with other travelers on this app!",
   age: 28)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1526094114998-bbde692632d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 16"
 user16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user16.save
 
-  activity = Activity.new(
-  title: "Wine Tasting Tour",
-  description: "Join us for a tour of some of the best wineries in the Napa Valley. We'll learn about the history and process of wine making, and of course, taste some delicious wines along the way. Lunch will be provided at one of the wineries.",
-  location: "Napa Valley, California",
-  time: DateTime.new(2024, 1, 15, 11, 30, 0),
+activity = Activity.new(
+  title: "Motorcycle Day Trip",
+  description: "Join us for a thrilling motorcycle tour of Ho Chi Minh City. We'll explore the city's vibrant streets, historic landmarks, and bustling markets, experiencing the sights, sounds, and tastes of Vietnam along the way. Lunch will be provided at a local restaurant.",
+  location: "Ho Chi Minh City, Vietnam",
+  time: DateTime.new(2024, 1, 15, 9, 0, 0),
   user_id: user16.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?wine")
+  file = URI.open("https://images.unsplash.com/photo-1593449227036-9de17c6316e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=734&q=80")
 puts "Attaching photo 16"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -418,7 +420,7 @@ activity.save
   bio: "Hey, I'm Daniel, a foodie who loves trying out new restaurants and cuisines. I enjoy exploring local markets and trying out street food. Looking forward to connecting with fellow foodies and sharing recommendations on this app!",
   age: 32)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1520592978680-efbdeae5d036?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 17"
 user17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user17.save
@@ -430,7 +432,7 @@ user17.save
   time: DateTime.new(2024, 1, 18, 9, 0, 0),
   user_id: user17.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?nepal")
+  file = URI.open("https://images.unsplash.com/photo-1526712318848-5f38e2740d44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
 puts "Attaching photo 17"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -442,7 +444,7 @@ activity.save
   bio: "Hello! I'm Jessica, a luxury traveler who enjoys staying in high-end hotels and experiencing the finer things in life. I'm also a fan of spa treatments and fine dining. Looking forward to connecting with other luxury travelers on this app!",
   age: 35)
 
-  file = URI.open("https://source.unsplash.com/random/250x250/?model")
+  file = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 puts "Attaching profile photo 18"
 user18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user18.save
@@ -454,7 +456,7 @@ user18.save
   time: DateTime.new(2024, 1, 22, 19, 0, 0),
   user_id: user18.id)
 
-  file = URI.open("https://source.unsplash.com/random/650x430/?scuba")
+  file = URI.open("https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
 puts "Attaching photo 18"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -467,8 +469,8 @@ user19 = User.new(
   age: 30
 )
 
-file = URI.open("https://source.unsplash.com/random/250x250/?yoga")
-puts "Attaching profile photo 1"
+file = URI.open("https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=744&q=80")
+puts "Attaching profile photo 19"
 user19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user19.save
 
@@ -480,8 +482,8 @@ activity = Activity.new(
   user_id: user19.id
 )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?cocktail-bar-bali")
-puts "Attaching photo 1"
+file = URI.open("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+puts "Attaching photo 19"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
@@ -493,8 +495,8 @@ user20 = User.new(
   age: 28
 )
 
-file = URI.open("https://source.unsplash.com/random/250x250/?surfing")
-puts "Attaching profile photo 1"
+file = URI.open("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+puts "Attaching profile photo 20"
 user20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user20.save
 
@@ -506,8 +508,7 @@ activity = Activity.new(
   user_id: user20.id
 )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?surfing-bali")
-puts "Attaching photo 1"
+file = URI.open("https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80oto 20")
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
@@ -519,8 +520,8 @@ user21 = User.new(
   age: 28
 )
 
-file = URI.open("https://source.unsplash.com/random/250x250/?traveler")
-puts "Attaching profile photo 1"
+file = URI.open("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+puts "Attaching profile photo 21"
 user21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user21.save
 
@@ -532,8 +533,8 @@ activity = Activity.new(
     user_id: user21.id
   )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?jewelry-workshop")
-puts "Attaching photo 1"
+file = URI.open("https://images.unsplash.com/photo-1523252012848-c22188792c27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+puts "Attaching photo 21"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
@@ -545,8 +546,8 @@ user22 = User.new(
   age: 31
 )
 
-file = URI.open("https://source.unsplash.com/random/250x250/?adventurer")
-puts "Attaching profile photo 1"
+file = URI.open("https://images.unsplash.com/photo-1531074823428-3dd8856acd45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+puts "Attaching profile photo 22"
 user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user22.save
 
@@ -558,8 +559,8 @@ activity = Activity.new(
     user_id: user22.id
   )
 
-file = URI.open("https://source.unsplash.com/random/650x430/?sunset-cruise")
-puts "Attaching photo 1"
+file = URI.open("https://images.unsplash.com/photo-1516495312540-a148643b22d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
+puts "Attaching photo 22"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
