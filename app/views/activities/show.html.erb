@@ -1,13 +1,15 @@
 <div id="activities-show">
   <div class= "pictures">
     <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
+    <%= link_to user_path(@activity.user) do %>
     <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
+    <% end %>
   </div>
   <div>
     <div class= "description-index">
       <h3 class="title"><%= @activity.title %></h3>
       <div>
-        <p class="date"><%= @activity.time.strftime('%A, %B %e, %Y at %l:%M %p') %></p>
+        <p class="date"><%= @activity.time.strftime('%a, %b %e • %R') %></p>
       </div>
       <div class="btn-join">
         <% if @already_booked == true %>
