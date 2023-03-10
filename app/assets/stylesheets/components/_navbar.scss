@@ -1,5 +1,5 @@
 .navbar {
-  width : 100vw;
+  width : 100%;
   background-color:#FDFDFE;
   color: #A7A8AD;
   height: 88px;
@@ -7,7 +7,6 @@
   position: sticky;
   bottom: 0;
   padding-top: 20px;
-  max-width: 414px;
 
   .nav-link {
     display: flex;

@@ -19,10 +19,14 @@
 
 
 body {
-  max-width: 414px;
+  max-width: 500px;
   margin: auto;
 
   background-color: #F4F9FE;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .inner-cont {
