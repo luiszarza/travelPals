@@ -16,6 +16,8 @@ export default class extends Controller {
     this.geocoder.addTo(this.element)
     this.geocoder.on("result", event => this.#setInputValue(event))
     this.geocoder.on("clear", () => this.#clearInputValue())
+    this.dateTarget.insertAdjacentHTML('afterend', '<i class="booking-cal fa-solid fa-calendar-days"></i>');
+
   }
 
   #setInputValue(event) {
