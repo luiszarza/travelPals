@@ -459,15 +459,114 @@ puts "Attaching photo 18"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
-30.times do
+user19 = User.new(
+  email: "esmee@gmail.com",
+  password: "abc123",
+  name: "Esmee Denters",
+  bio: "Hey there, I'm Esmee and I love exploring the world one adventure at a time. I'm always looking for new experiences and meeting new people. When I'm not out and about, I enjoy reading, cooking, and practicing yoga. Looking forward to connecting with fellow travelers and sharing some unforgettable memories!",
+  age: 30
+)
+
+file = URI.open("https://source.unsplash.com/random/250x250/?yoga")
+puts "Attaching profile photo 1"
+user19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user19.save
+
+activity = Activity.new(
+  title: "Sunset Cocktail Crawl",
+  description: "Join me for a fun night out exploring Bali's best bars and cocktails. We'll visit some of the coolest and most scenic bars, enjoy delicious cocktails, and make new friends. Don't miss out on this amazing experience!",
+  location: "Seminyak, Bali",
+  time: DateTime.new(2023, 8, 12, 19, 0, 0),
+  user_id: user19.id
+)
+
+file = URI.open("https://source.unsplash.com/random/650x430/?cocktail-bar-bali")
+puts "Attaching photo 1"
+activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+activity.save
+
+user20 = User.new(
+  email: "tom@gmail.com",
+  password: "abc123",
+  name: "Tom Lee",
+  bio: "Hi, I'm Tom and I love staying active and exploring the outdoors. I enjoy hiking, surfing, and exploring new places. When I'm not out and about, you can find me playing guitar or hanging out with friends. Excited to meet fellow adventurers and create some unforgettable memories!",
+  age: 28
+)
+
+file = URI.open("https://source.unsplash.com/random/250x250/?surfing")
+puts "Attaching profile photo 1"
+user20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user20.save
+
+activity = Activity.new(
+  title: "Surfing Adventure",
+  description: "Join me for an epic day of surfing at one of Bali's best spots. We'll catch some waves, enjoy the beautiful scenery, and have an unforgettable experience. Suitable for all levels, whether you're a beginner or an experienced surfer. See you there!",
+  location: "Uluwatu, Bali",
+  time: DateTime.new(2023, 9, 20, 9, 0, 0),
+  user_id: user20.id
+)
+
+file = URI.open("https://source.unsplash.com/random/650x430/?surfing-bali")
+puts "Attaching photo 1"
+activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+activity.save
+
+user21 = User.new(
+  email: "lucie@gmail.com",
+  password: "abc123",
+  name: "Lucie Dupont",
+  bio: "Bonjour! I'm Lucie, a French traveler who loves discovering new places and meeting new people. I'm always up for an adventure, whether it's hiking up a volcano or trying out the local cuisine. Let's explore Bali together!",
+  age: 28
+)
+
+file = URI.open("https://source.unsplash.com/random/250x250/?traveler")
+puts "Attaching profile photo 1"
+user21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user21.save
+
+activity = Activity.new(
+    title: "Artisan Jewelry Workshop",
+    description: "Join us for a fun and creative afternoon making your own unique jewelry with a local artisan in Bali. Learn how to work with various materials and techniques to create a beautiful piece that you can take home with you.",
+    location: "Ubud, Bali",
+    time: DateTime.new(2023, 11, 10, 14, 0, 0),
+    user_id: user21.id
+  )
+
+file = URI.open("https://source.unsplash.com/random/650x430/?jewelry-workshop")
+puts "Attaching photo 1"
+activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+activity.save
+
+user22 = User.new(
+  email: "oliver@gmail.com",
+  password: "abc123",
+  name: "Oliver Schmidt",
+  bio: "Hi, I'm Oliver from Germany. I'm passionate about exploring different cultures and trying new things. When I'm not traveling, you can find me playing my guitar or hanging out with friends. Let's discover Bali together!",
+  age: 31
+)
+
+file = URI.open("https://source.unsplash.com/random/250x250/?adventurer")
+puts "Attaching profile photo 1"
+user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user22.save
+
+activity = Activity.new(
+    title: "Sunset Cruise in Benoa Bay",
+    description: "Join us for a relaxing and romantic sunset cruise in Benoa Bay. Enjoy stunning views of the Bali coastline while sipping on cocktails and snacking on delicious appetizers. Perfect for couples or solo travelers looking to unwind and make new friends.",
+    location: "Benoa, Bali",
+    time: DateTime.new(2023, 9, 15, 16, 0, 0),
+    user_id: user22.id
+  )
+
+file = URI.open("https://source.unsplash.com/random/650x430/?sunset-cruise")
+puts "Attaching photo 1"
+activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+activity.save
+
+puts "Creating bookings"
+50.times do
   Booking.create(
     activity: Activity.all.sample,
     user: User.all.sample
-  )
-end
-
-30.times do
-  Chatroom.create(
-    name: User.all.sample,
   )
 end
