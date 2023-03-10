@@ -26,7 +26,7 @@
       <%= link_to activity_path(activity) do %>
         <div class="card-event">
           <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
-          <div class="card-info">
+          <div class="infos-activity">
             <h3 class="infos"><%= activity.title %></h3>
             <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
             <p class="location"><i class="fa-solid fa-location-dot"></i><%= activity.location %></p>
@@ -40,7 +40,7 @@
       <%= link_to activity_path(activity) do %>
         <div class="card-event">
           <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
-          <div class="">
+          <div class="infos-activity">
             <h3 class="infos"><%= activity.title %></h3>
             <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
             <p class="location"><i class="fa-solid fa-location-dot"></i><%=activity.location %></p>

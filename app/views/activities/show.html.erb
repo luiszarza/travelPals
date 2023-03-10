@@ -29,7 +29,7 @@
               <% @activity.attendees.each do |attendee| %>
                 <%= link_to user_path(attendee), class: "card-index-going" do %>
                   <% if attendee.photo.attached? %>
-                    <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-profile rounded-circle" %>
+                    <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
                   <% else %>
                     <%= image_tag "https://res.cloudinary.com/dzjv9xjxw/image/upload/v1593640008/placeholder-profile-picture-973460_1280_ukqjxu.png", width: 50, height: 50, class: "card-index-profile rounded-circle" %>
                   <% end %>
