@@ -1,7 +1,9 @@
 <div id="activities-show">
   <div class= "pictures">
     <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
+    <%= link_to user_path(@activity.user) do %>
     <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
+    <% end %>
   </div>
   <div>
     <div class= "description-index">
