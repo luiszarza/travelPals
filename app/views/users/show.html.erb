@@ -14,43 +14,44 @@
     <% if user_signed_in? && current_user == @user %>
       <%= link_to "Edit Profile", edit_user_registration_path, class: "button-chat" %>
     <% else %>
-      <%= link_to "Chat", chatrooms_path(user_id: @user.id), class: "button-chat-edit" %>
+      <%= link_to "Chat", chatrooms_path(user_id: @user.id), class: "button-edit" %>
     <% end %>
   </div>
   <div class="my-class">
-  <% if @user.organized_activities.present? %>
-    <p class="going-to">Going to / Organizing</p>
-    <p class="organizing">Organizing</p>
-    <% @user.organized_activities.each do |activity| %>
-      <%= link_to activity_path(activity) do %>
-        <div class="card-event">
-          <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
-          <div class="infos-activity">
-            <h3 class="infos"><%= activity.title %></h3>
-            <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
-            <p class="location"><i class="fa-solid fa-location-dot"></i><%= activity.location %></p>
+    <% if @user.organized_activities.present? %>
+      <p class="going-to">Going to / Organizing</p>
+      <p class="organizing">Organizing</p>
+      <% @user.organized_activities.each do |activity| %>
+        <%= link_to activity_path(activity) do %>
+          <div class="card-event">
+            <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
+            <div class="infos-activity">
+              <h3 class="infos"><%= activity.title %></h3>
+              <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i><%= activity.location %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <p>You have no organized activities</p>
     <% end %>
-  <% else %>
-    <p>You have no organized activities</p>
-  <% end %>
-  <% if @user.attending_activities.present? %>
-    <p class="going-to">Going to</p>
-    <% @user.attending_activities.each do |activity| %>
-      <%= link_to activity_path(activity) do %>
-        <div class="card-event">
-          <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
-          <div class="infos-activity">
-            <h3 class="infos"><%= activity.title %></h3>
-            <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
-            <p class="location"><i class="fa-solid fa-location-dot"></i><%=activity.location %></p>
+    <% if @user.attending_activities.present? %>
+      <p class="going-to">Going to</p>
+      <% @user.attending_activities.each do |activity| %>
+        <%= link_to activity_path(activity) do %>
+          <div class="card-event">
+            <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
+            <div class="infos-activity">
+              <h3 class="infos"><%= activity.title %></h3>
+              <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i><%=activity.location %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <p>You are not going to any activities</p>
     <% end %>
-  <% else %>
-    <p>You are not going to any activities</p>
-  <% end %>
+  </div>
 </div>
