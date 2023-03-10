@@ -3,14 +3,9 @@
 <% end %>
 <div class="container mt-4">
   <div class="row">
-    <div class="col-md-6 mx-auto text-center">
+    <div class="col">
       <h1>You have successfully joined this activity.</h1>
-      <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?
-        text=#{@booking.activity.title}
-        &dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}
-        &ctz=#{@booking.activity.time.strftime('%Z')}
-        &details=#{@booking.activity.description}
-        &location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
+      <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?text=#{@booking.activity.title}&dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}&ctz=#{@booking.activity.time.strftime('%Z')}&details=#{@booking.activity.description}&location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
     </div>
   </div>
 </div>
