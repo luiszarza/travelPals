@@ -1,4 +1,5 @@
 <div data-search-activities-target="list">
+  <h4 class="activities-count"><%= @activities.count %> activities</h4>
   <% @activities.each do |activity| %>
     <%= link_to activity do %>
       <div class="card-index">
