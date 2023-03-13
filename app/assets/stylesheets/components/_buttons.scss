@@ -201,7 +201,7 @@ h1, p {
 
 .button-round-grey {
   text-decoration: none;
-  background-color: $gray;
+  background-color: #E8E9EA;
   font-size: 18px;
   color: black;
   text-align: center;
@@ -221,7 +221,8 @@ h1, p {
   font-weight: 600;
   padding: 15px 24px;
   border-radius: 37px;
-  display: inline-table;
-  margin-top: 25px;
+  display: flex;
+  width: 75%;
   text-align: center;
+  margin: 5lh auto;
 }
