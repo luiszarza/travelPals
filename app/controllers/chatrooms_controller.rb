@@ -25,6 +25,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.where(requester: current_user).where(recipient: @user)
     if @chatroom.empty?
       @chatroom = Chatroom.new(requester: current_user, recipient: @user)
+      @chatroom.save
     else
       @chatroom = @chatroom.first
     end
