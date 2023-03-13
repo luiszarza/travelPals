@@ -10,6 +10,10 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all
     end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "activities/list", locals: {activities: @activities}, formats: [:html] }
+    end
   end
 
   def map
