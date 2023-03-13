@@ -25,15 +25,16 @@
             %>
           <% end %>
         <%= f.input :time, as: :string, label: false, placeholder: "Select your date", input_html: { data: { flatpickr_target: "time" } } %>
-        <%= f.input :photos, as: :file, input_html: {multiple: true}, class: "form-control", id: "customFile" %>
-        <% unless f.object.new_record? %>
-          <p>Pictures already uploaded</p>
-          <div class="container">
-            <% @activity.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, class: "picture-preview"%>
-            <% end %>
-          </div>
-        <% end %>
+        <div class="container" data-controller="photo-preview">
+          <%= f.input :photos, as: :file, input_html: {id: 'photo-input', class: "d-none", multiple: true}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo', class: "form-control", id: "customFile" %>
+            <%= image_tag "", width: 150, class: "hidden", data: { photo_preview_target: "preview"}   %>
+          <% unless f.object.new_record? %>
+            <p>Pictures already uploaded</p>
+              <% @activity.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, class: "picture-preview"  %>
+              <% end %>
+          <% end %>
+        </div>
         <%= f.submit class: 'button-rectangle-orange-create' %>
       <% end  %>
   </div>

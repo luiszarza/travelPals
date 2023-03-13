@@ -13,9 +13,6 @@ application.register("chatroom-subscription", ChatroomSubscriptionController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
-
 import LocationAutocompleteController from "./location_autocomplete_controller"
 application.register("location-autocomplete", LocationAutocompleteController)
 
@@ -24,3 +21,6 @@ application.register("map", MapController)
 
 import SearchActivitiesController from "./search_activities_controller"
 application.register("search-activities", SearchActivitiesController)
+
+import PhotoPreviewController from "./photo_preview_controller"
+application.register("photo-preview", PhotoPreviewController)

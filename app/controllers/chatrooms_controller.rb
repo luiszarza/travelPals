@@ -32,8 +32,6 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    # clicking the chat button on the user profile page will redirect to this action
-    # and create a new chatroom with the current user and the user they clicked on
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.requester = current_user
     @chatroom.recipient = User.find(params[:user_id])
