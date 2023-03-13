@@ -4,6 +4,15 @@
     <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
   </form> %>
 
+  <%= form_with url: activities_path, method: :get, class: "search-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "search-term",
+        placeholder: "Find an activity"
+      %>
+      <%= submit_tag "Search", class: "button-search" %>
+  <% end %>
+
   <h4 class="activities-count"><%= @activities.count %> activities</h4>
   <% @activities.each do |activity| %>
       <%= link_to activity do %>
@@ -11,9 +20,16 @@
           <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
           <div class= "description-index">
             <h5 class= "title"><%= activity.title %></h5>
+            <p class= "location"><i class="fa-solid fa-location-dot"></i> <%=activity.location%></p>
             <p class="date"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+
           </div>
         </div>
       <% end %>
   <% end %>
+  <div class="map_view">
+    <%= link_to map_activities_path, class: "button_map_view" do %>
+          <i class="fa-solid fa-map-location-dot"></i> Map View
+    <% end %>
+  </div>
 </div>

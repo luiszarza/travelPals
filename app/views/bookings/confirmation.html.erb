@@ -1,11 +1,18 @@
-<%= link_to request.referrer do %>
-      <i class="fa-solid fa-circle-arrow-left"></i>
-<% end %>
-<div class="container mt-4">
-  <div class="row">
-    <div class="col">
-      <h1>You have successfully joined this activity.</h1>
-      <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?text=#{@booking.activity.title}&dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}&ctz=#{@booking.activity.time.strftime('%Z')}&details=#{@booking.activity.description}&location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
-    </div>
+<div id="confirmation-page">
+  <%= link_to request.referrer do %>
+        <i class="button-round-grey"><i class="fa-solid fa-angle-left"></i></i>
+      <% end %>
+  <div class="circle">
+    <i class="fa-solid fa-check"></i>
   </div>
+  <div class="confirmation-card">
+        <h1 class="happy-travels">Happy Travels!</h1>
+        <h3 class="confirmation">You have successfully joined this activity</h3>
+  </div>
+  <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?
+    text=#{@booking.activity.title}
+    &dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}
+    &ctz=#{@booking.activity.time.strftime('%Z')}
+    &details=#{@booking.activity.description}
+    &location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
 </div>

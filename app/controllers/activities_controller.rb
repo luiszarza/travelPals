@@ -1,9 +1,17 @@
 class ActivitiesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
+    if params[:query].present?
+      @activities = Activity.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
+  end
+
+  def map
     @activities = Activity.all
   end
 
@@ -56,6 +64,8 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path, status: :see_other, alert: "Activity deleted"
   end
 
+
+
   private
 
   def set_activity
@@ -65,5 +75,6 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :description, :location, :time, photos: [])
   end
+
 
 end

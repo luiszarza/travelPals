@@ -91,7 +91,7 @@ h1, p {
   border-radius: 10px;
   font-weight: 700;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .button-rectangle-white:hover {
@@ -177,62 +177,31 @@ h1, p {
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  padding: 17px;
+  padding: 10px 20px;
   border-radius: 37px;
   display: inline-table;
   margin-top: 15px;
-  width: 43%;
   text-align: center;
 }
 
-.button-chat:hover {
-  color: black;
-  background-color: white;
-  font-family: Montserrat;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 17px;
-  border-radius: 37px;
-  display: inline-table;
-  margin-top: 15px;
-  width: 43%;
-  text-align: center;
-}
 
 .button-edit {
   color: black;
   background-color: white;
   font-family: Montserrat;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  padding: 17px;
+  padding: 10px 20px;
   border-radius: 37px;
   display: inline-table;
   margin-top: 15px;
-  width: 43%;
-  text-align: center;
-}
-
-.button-edit:hover {
-  color: black;
-  background-color: white;
-  font-family: Montserrat;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 17px;
-  border-radius: 37px;
-  display: inline-table;
-  margin-top: 15px;
-  width: 43%;
   text-align: center;
 }
 
 .button-round-grey {
   text-decoration: none;
-  background-color: $gray;
+  background-color: #E8E9EA;
   font-size: 18px;
   color: black;
   text-align: center;
@@ -252,7 +221,8 @@ h1, p {
   font-weight: 600;
   padding: 15px 24px;
   border-radius: 37px;
-  display: inline-table;
-  margin-top: 25px;
+  display: flex;
+  width: 75%;
   text-align: center;
+  margin: 5lh auto;
 }

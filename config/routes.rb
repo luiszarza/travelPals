@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :activities do
+    collection do
+      get :map
+    end
     resources :bookings, :comments, only: [:create, :destroy]
   end
 
