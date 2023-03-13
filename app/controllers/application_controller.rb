@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :age, :photo])
   end
 
-    private
+  private
 
 
   def storable_location?

@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
 
   def map
     @activities = Activity.all
+    @markers = @activities.geocoded.map { |activity| { lat: activity.latitude, lng: activity.longitude } }
   end
 
   def show
