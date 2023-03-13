@@ -4,7 +4,11 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activity.all
+    if params[:query].present?
+      @activities = Activity.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
   end
 
   def map
