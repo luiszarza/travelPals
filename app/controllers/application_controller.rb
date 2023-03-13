@@ -24,7 +24,11 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 
-  def after_sign_in_path_for(resource)
-    activities_path
+  def after_sign_in_path_for(resource_or_scope)
+    if stored_location_for(resource_or_scope) == root_path
+      return activities_path
+    else
+      return stored_location_for(resource_or_scope)
+    end
   end
 end
