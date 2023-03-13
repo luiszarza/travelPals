@@ -47,4 +47,11 @@
     text-overflow: ellipsis;
   }
 
+  .picture-profile-card {
+    height: 165px;
+    width: 169px;
+    border-radius: 35px;
+    object-fit: cover;
+  }
+
 }
