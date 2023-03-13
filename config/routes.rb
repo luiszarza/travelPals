@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
   resources :activities do
+    collection do
+      get :map
+    end
     resources :bookings, :comments, only: [:create, :destroy]
   end
 
@@ -21,5 +24,5 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
-  
+
 end

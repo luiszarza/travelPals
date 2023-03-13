@@ -31,7 +31,7 @@
             <div class="infos-activity">
               <h3 class="infos"><%= activity.title %></h3>
               <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
-              <p class="location"><i class="fa-solid fa-location-dot"></i><%= activity.location %></p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> <%= activity.location %></p>
             </div>
           </div>
         <% end %>
@@ -48,7 +48,7 @@
             <div class="infos-activity">
               <h3 class="infos"><%= activity.title %></h3>
               <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
-              <p class="location"><i class="fa-solid fa-location-dot"></i><%=activity.location %></p>
+              <p class="location"><i class="fa-solid fa-location-dot"></i> <%=activity.location %></p>
             </div>
           </div>
         <% end %>

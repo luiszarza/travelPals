@@ -38,3 +38,19 @@
     margin-bottom: 0;
   }
 }
+
+.map_view {
+  z-index: 999;
+  position: sticky;
+  bottom: 100px;
+  max-width: 118px;
+  font-size: 13px;
+  background: #ff9778;
+  color: white;
+  margin: auto;
+  padding: 8px 17px;
+  border-radius: 50px;
+}
+.map_view a {
+  color: white;
+}
