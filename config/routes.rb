@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
+  get '/users/:user_id/chat', to: 'chatrooms#new_chatroom_with_user', as: 'new_chatroom_with_user'
+
+
   resources :activities do
     resources :bookings, :comments, only: [:create, :destroy]
   end
@@ -18,8 +21,8 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :chatrooms, only: [:show, :index] do
+  resources :chatrooms, only: [:new,:show, :index, :create] do
     resources :messages, only: :create
   end
-  
+
 end

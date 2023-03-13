@@ -14,7 +14,7 @@
     <% if user_signed_in? && current_user == @user %>
       <%= link_to "Edit Profile", edit_user_registration_path, class: "button-chat" %>
     <% else %>
-      <%= link_to "Chat", chatrooms_path(user_id: @user.id), class: "button-edit" %>
+      <%= link_to "Chat", new_chatroom_with_user_path(user_id: @user.id), class: "btn-chat" %>
     <% end %>
   </div>
   <div class="my-class">

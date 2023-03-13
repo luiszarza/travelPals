@@ -2,7 +2,18 @@
 <%# <%= link_to "Chatroom 2", chatroom_path(2) %>
 <div id="users-show">
   <div class="card-profile">
-    <h1>Coming soon</h1>
+    <h1>Chatrooms</h1>
+  <% if @chatrooms.empty? %>
+    <h1>Start chatting!</h1>
+  <% else %>
+      <% @chatrooms.each do |chatroom| %>
+        <div class="card-profile">
+          <h2><%= @chatroom_names[chatroom.id] %></h2>
+          <%= link_to @chatroom_names[chatroom.id], chatroom_path(chatroom) %>
+        </div>
+      <% end %>
+  <% end %>
     <%= link_to "Back to Activities", activities_path %>
   </div>
+  <%= console %>
 </div>
