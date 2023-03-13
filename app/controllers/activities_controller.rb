@@ -7,6 +7,10 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
+  def map
+    @activities = Activity.all
+  end
+
   def show
     @activity = Activity.find(params[:id])
     @already_booked = Booking.where(activity: @activity, user: current_user).any?
@@ -56,6 +60,8 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path, status: :see_other, alert: "Activity deleted"
   end
 
+
+
   private
 
   def set_activity
@@ -65,5 +71,6 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :description, :location, :time, photos: [])
   end
+
 
 end
