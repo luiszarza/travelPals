@@ -1,24 +1,17 @@
-<div id="activities-index">
-  <%# <form action="#" method="GET" class="search-form">
-    <input type="search" class="search-term" placeholder="Search for location or activity">
-    <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
-  </form> %>
+<div id="activities-index" data-controller="search-activities">
 
-  <div data-controller="search-activities">
-    <%= form_with url: activities_path, method: :get, html: {class:
-    "search-form", data: {search_activities_target: "form"}} do |f|%>
-        <%= f.text_field :query,
-          class: "search-term",
-          placeholder: "Search an activity or location",
-          value: params[:query],
-          data: {
-            search_activities_target: "input",
-            action: "keyup->search-activities#update"}
-        %>
-    <% end %>
-  </div>
+  <%= form_with url: activities_path, method: :get, html: {class:
+  "search-form", data: {search_activities_target: "form"}} do |f|%>
+      <%= f.text_field :query,
+        class: "search-term",
+        placeholder: "Search an activity or location",
+        value: params[:query],
+        data: {
+          search_activities_target: "input",
+          action: "keyup->search-activities#update"}
+      %>
+  <% end %>
 
-  <h4 class="activities-count"><%= @activities.count %> activities</h4>
   <%= render "list", activities: @activities %>
   <div class="map_view">
     <%= link_to map_activities_path, class: "button_map_view" do %>
