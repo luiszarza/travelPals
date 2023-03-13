@@ -1,0 +1,14 @@
+<div data-search-activities-target="list">
+  <% @activities.each do |activity| %>
+    <%= link_to activity do %>
+      <div class="card-index">
+        <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
+        <div class= "description-index">
+          <h5 class= "title"><%= activity.title %></h5>
+          <p class= "location"><i class="fa-solid fa-location-dot"></i> <%=activity.location%></p>
+          <p class="date"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
