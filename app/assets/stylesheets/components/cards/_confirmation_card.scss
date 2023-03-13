@@ -1,0 +1,55 @@
+#confirmation-page {
+  .confirmation-card {
+    background-color: $green;
+    width: 100%;
+    border-radius: 35px;
+    display: flex;
+    margin-top: 30%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    height: 35vh;
+    position: relative;
+  }
+
+  .circle {
+    background-color: #84CD99;
+    border-radius: 50%;
+    width: 14vh;
+    border-color: white;
+    position: absolute;
+    border-width: 0.2cm;
+    height: 14vh;
+    margin-top: 11%;
+    right: 36%;
+    border: 12px solid #f4f9fe;
+    z-index: 1;
+  }
+
+  .fa-check {
+    color: #f4f9fe;
+    font-size: 7vh;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-top: 18%;
+    margin-left: 17%;
+  }
+
+  .happy-travels {
+    font-size: 20px;
+    font-family: "montserrat";
+    font-size: 700;
+    margin-top: 24%;
+  }
+
+  .confirmation {
+    font-size: 16px;
+    font-family: "montserrat";
+    font-size: 600;
+    color: #737373;
+    margin-top: 18%
+  }
+}
