@@ -4,4 +4,7 @@ class UsersController < ApplicationController
     @attending_activities = @user.attending_activities
     @organized_activities = @user.organized_activities
   end
+
+  def create
+  end
 end
