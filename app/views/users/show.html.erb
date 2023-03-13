@@ -16,8 +16,8 @@
           <i class="fa-regular fa-pen-to-square"></i> Edit Profile
       <% end %>
     <% else %>
-      <%= link_to "Chat", new_chatroom_with_user_path(user_id: @user.id), class: "button-edit" do %>
-          <i class="fa-brands fa-rocketchat"></i> Chat
+      <%= link_to new_chatroom_with_user_path(user_id: @user.id), class: "button-edit" do %>
+          <i class="fa-brands fa-rocketchat"></i>
       <% end %>
     <% end %>
   </div>
