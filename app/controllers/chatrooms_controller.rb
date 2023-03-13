@@ -22,12 +22,13 @@ class ChatroomsController < ApplicationController
 
   def new_chatroom_with_user
     @user = User.find(params[:user_id])
-    @chatroom = Chatroom.new(requester: current_user, recipient: @user)
-    if @chatroom.save
-      redirect_to chatroom_path(@chatroom)
+    @chatroom = Chatroom.where(requester: current_user).where(recipient: @user)
+    if @chatroom.empty?
+      @chatroom = Chatroom.new(requester: current_user, recipient: @user)
     else
-      render :new
+      @chatroom = @chatroom.first
     end
+    redirect_to chatroom_path(@chatroom)
   end
 
   def create
