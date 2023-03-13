@@ -33,7 +33,7 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-  
+
   config.active_storage.replace_on_assign_to_many = false
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
@@ -70,5 +70,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  config.hosts << /\A[a-z\d-]+\.loca\.lt\z/  
+  config.hosts << /\A[a-z\d-]+\.loca\.lt\z/
 end

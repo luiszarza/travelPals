@@ -5,7 +5,8 @@ class ActivitiesController < ApplicationController
 
   def index
     if params[:query].present?
-      @activities = Activity.where("title ILIKE ?", "%#{params[:query]}%")
+      sql_query = "title ILIKE :query OR description ILIKE :query OR location ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
       @activities = Activity.all
     end

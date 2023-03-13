@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#FF9778">
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#FF9778">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#FF9778">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= render 'shared/ios_pwa_links' %>
 
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>

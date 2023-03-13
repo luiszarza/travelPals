@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
 
     private
 
-
   def storable_location?
     request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end
@@ -25,10 +24,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if stored_location_for(resource_or_scope) == root_path
-      return activities_path
-    else
-      return stored_location_for(resource_or_scope)
-    end
+    path = stored_location_for(resource_or_scope)
+    return activities_path if path == root_path
+
+    path
   end
 end
