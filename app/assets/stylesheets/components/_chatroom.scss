@@ -1,11 +1,50 @@
 .chatroom {
-  background: white;
-  margin-top: 9px;
-  height: calc(100vh - 75px);
+  // background: white;
+  // margin-top: 9px;
+  // height: calc(100vh - 75px);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // flex-grow: 1;
+  // NEW SYNTAX
+  padding: 12px;
+  /* margin-top: 9px; */
+  /* height: calc(100vh - 75px); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  height: 100vh;
+
+  .chatroom-name {
+    font-family: "montserrat";
+    font-weight: 500;
+    text-decoration: none !important;
+    color: black !important;
+    font-size: 20px;
+  }
+
+  .card-chat-picture {
+    border-radius: 100%;
+    height: 75px;
+    width: 75px;
+    -webkit-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.69);
+    margin-left: 15px;
+  }
+
+  .card-chat {
+    background-color: #FF9778;
+    width: 100%;
+    border-radius: 35px;
+    display: flex;
+    margin-top: -2%;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 30px;
+    box-shadow: 0px 9px 39px -16px rgba(0,0,0,0.2);
+  }
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -21,10 +60,31 @@
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding: 0rem;
 
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  .message-input {
+    color: white;
+    width: 44vh;
+    border-radius: 30px;
+  }
+
+  .message-wrapper {
+    display: flex;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .online {
+    color: #78c98f;
+    font-weight: 400;
+    font-size: 14px;
+    /* text-shadow: 0 0 white; */
+    text-shadow: 1px 2px 1px rgba(255,255,255, 0.10%);
   }
 }

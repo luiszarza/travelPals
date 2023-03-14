@@ -14,6 +14,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    @chatroom_with_user = @chatroom.requester == current_user ? @chatroom.recipient : @chatroom.requester
     @message = Message.new
   end
 
