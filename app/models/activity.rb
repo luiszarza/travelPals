@@ -9,4 +9,5 @@ class Activity < ApplicationRecord
   validates :description, length: { minimum: 150 }
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+  has_many :comments, dependent: :destroy
 end

@@ -23,6 +23,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @comment = Comment.new
     @already_booked = Booking.where(activity: @activity, user: current_user).any?
     @booking = Booking.new
     @activities = Activity.where(id: params[:id])
