@@ -18,7 +18,22 @@ class ActivitiesController < ApplicationController
 
   def map
     @activities = Activity.all
-    @markers = @activities.geocoded.map { |activity| { lat: activity.latitude, lng: activity.longitude } }
+    @activity_info = {}
+    @activities.geocoded.each do |activity|
+      @activity_info[activity.title.gsub(" ", "-")] = {
+        center: [ activity.longitude, activity.latitude ],
+        zoom: 10
+      }
+    end
+
+      @markers = @activities.geocoded.map { |activity|
+
+      { lat: activity.latitude,
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
+      }
+    }
+
   end
 
   def show

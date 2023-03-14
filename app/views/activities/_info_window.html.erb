@@ -1,0 +1,9 @@
+<% activity_title = activity.title.gsub(" ", "-") %>
+<div class="details-box" id="<%= activity_title %>">
+  <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-map-picture" %>
+  <div class= "description-map">
+    <h6 id="<%= activity_title %>" class= "title"><%= activity.title %></h6>
+    <p class="date"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+</div>
+
+</div>
