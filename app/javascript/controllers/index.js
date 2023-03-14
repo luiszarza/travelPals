@@ -19,8 +19,11 @@ application.register("location-autocomplete", LocationAutocompleteController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import PhotoPreviewController from "./photo_preview_controller"
+application.register("photo-preview", PhotoPreviewController)
+
 import SearchActivitiesController from "./search_activities_controller"
 application.register("search-activities", SearchActivitiesController)
 
-import PhotoPreviewController from "./photo_preview_controller"
-application.register("photo-preview", PhotoPreviewController)
+import ShareApiController from "./share_api_controller"
+application.register("share-api", ShareApiController)

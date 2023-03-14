@@ -11,6 +11,15 @@
       <div>
         <p class="date"><%= @activity.time.strftime('%a, %b %e • %R') %></p>
       </div>
+        <i
+          class="fas fa-share-alt"
+          data-controller="share-api"
+          data-action="click->share-api#share"
+          data-share-api-title-value="<%= @activity.title %>"
+          data-share-api-url-value="<%= activity_url(@activity) %>"
+          data-share-api-description-value="<%= @activity.description %>"
+        >
+        </i>
       <div class="btn-join">
         <% if @already_booked == true %>
           <%= link_to "Joined!", activity_booking_path(@activity, @booking), data: { turbo_method: :delete }, class: "button-joined" %>
@@ -68,3 +77,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= console %>
