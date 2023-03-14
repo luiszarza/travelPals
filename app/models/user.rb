@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :photo, presence: true
   # has_many :chatrooms
   has_many :chatrooms_as_recipient, class_name: "Chatroom", foreign_key: :recipient_id
+  has_many :comments, dependent: :destroy
 
   def chatrooms
     Chatroom.where(user_id: id).or(Chatroom.where(recipient_id: id))
