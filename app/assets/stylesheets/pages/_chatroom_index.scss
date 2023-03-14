@@ -1,0 +1,77 @@
+.card-chat-index {
+  width: 100%;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  // margin-top: -1%;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+}
+
+.photo-user-chat {
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  // margin-left: -9%;
+}
+
+.username {
+  font-family: "montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  flex-grow: 1;
+  text-align: start;
+  padding: 8px;
+}
+
+.chat-date {
+  font-family: "montserrat";
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 6%;
+}
+
+.chats {
+  font-family: "montserrat";
+  font-size: 20px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.search-form-chat {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  font-size: 12px;
+
+    .button-search{
+      position: absolute;
+      right: 2.2em;
+      top: 58%;
+      translate: 0 -50%;
+      height: 40px;
+      margin-top: -3%;
+    }
+
+    .button-search:hover {
+      color: white;
+    }
+}
+
+.search-term-chat {
+  width: 90%;
+  border-radius: 30px;
+  height: 59px;
+  border: white;
+  margin-top: 10px;
+  padding-left: 28px;
+  position: sticky;
+  filter: drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.1));
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
