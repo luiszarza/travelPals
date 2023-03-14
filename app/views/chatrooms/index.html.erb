@@ -1,20 +1,21 @@
-<h1>Chats</h1>
-<div class= "search-form">
-   <form action="#" method="GET" class="search-form">
-    <input type="search" class="search-term" placeholder="Search for users">
+<h1 class="chats">Chats</h1>
+<div class= "search-form-chat">
+  <form action="#" method="GET" class="search-form">
+    <input type="search" class="search-term-chat" placeholder="Search for users"/>
     <a class="button-search" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
     <%# <input type="submit" class="button-search" value="Search"> %>
   </form>
 </div>
-  <div id="users-show">
-
-      <% if @chatrooms.empty? %>
-        <h1>Start chatting!</h1>
-      <% else %>
-          <% @chatrooms.each do |chatroom| %>
-            <div class="card-profile">
-              <h3><%= link_to @chatroom_names[chatroom.id], chatroom_path(chatroom) %></h3>
-            </div>
-          <% end %>
-      <% end %>
-  </div>
+<div id="users-show">
+  <% if @chatrooms.empty? %>
+    <h1>Start chatting!</h1>
+  <% else %>
+    <% @chatrooms.each do |chatroom| %>
+      <div class="card-chat-index">
+        <%= cl_image_tag @chatroom_info[chatroom.id][:photo_key], alt: "text", class: "photo-user-chat" %>
+        <%= link_to @chatroom_info[chatroom.id][:user_name], chatroom_path(chatroom), class:"username" %>
+        <p class="chat-date"><%= @chatroom_info[chatroom.id][:date] %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

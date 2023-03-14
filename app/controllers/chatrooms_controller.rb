@@ -1,13 +1,21 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = current_user.chatrooms
-    @chatroom_names = {}
+    @chatroom_info = {}
 
     @chatrooms.each do |chatroom|
       if chatroom.requester == current_user
-        @chatroom_names[chatroom.id] = chatroom.recipient.name
+        @chatroom_info[chatroom.id] = {
+          user_name: chatroom.recipient.name,
+          photo_key: chatroom.recipient.photo.key,
+          date: chatroom.updated_at.strftime("%I:%M %P")
+        }
       elsif chatroom.recipient == current_user
-        @chatroom_names[chatroom.id] = chatroom.requester.name
+        @chatroom_info[chatroom.id] = {
+          name: chatroom.requester.name,
+          photo_key: chatroom.requester.photo.key,
+          date: chatroom.updated_at.strftime("%I:%M %P")
+        }
       end
     end
   end

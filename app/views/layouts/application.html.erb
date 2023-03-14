@@ -24,11 +24,11 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <% unless action_name == "home" || controller_name == "chatrooms" %>
+    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") %>
       <div class="inner-cont">
     <% end %>
     <%= yield %>
-    <% unless action_name == "home" || controller_name == "chatrooms" %>
+    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") %>
       </div>
     <% end %>
     <% if user_signed_in? %>
