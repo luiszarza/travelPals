@@ -1,26 +1,46 @@
-<%= link_to "Back to Chatrooms", chatrooms_path %>
-<div class="container chatroom"
+<div class="chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-  <h3><%= link_to (@chatroom.requester == current_user ? @chatroom.recipient.name : @chatroom.requester.name), (@chatroom.requester == current_user ? @chatroom.recipient : @chatroom.requester) %></h3>
+  <div class="card-chat">
+    <%= link_to chatrooms_path, class: "button-round-grey-chat" do %>
+      <div class="arrow"><i class="fa-solid fa-chevron-left"></i></div>
+    <% end %>
+    <%= cl_image_tag @chatroom_with_user.photo.key, alt: "text", class: "card-chat-picture" %>
+    <div class="name-online">
+      <h3 class="chatroom-name"><%= link_to @chatroom_with_user.name, user_path(@chatroom_with_user) %></h3>
+      <h2 class="online">online</h2>
+
+
+    </div>
+  </div>
+
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
           <%= render "messages/message", message: message %>
         </div>
       </div>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <i class= "message-date"><%= message.created_at.strftime("%b %e, %H:%M") %></i>
+      </div>
     <% end %>
   </div>
+
   <%= simple_form_for [@chatroom, @message],
     html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
     %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Type message here...",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
+    <div class="message-wrapper">
+      <%= f.input :content,
+        label: false,
+        placeholder: "Type message here...",
+        wrapper_html: {class: "flex-grow-1"},
+        input_html: { class:"message-input" }
+      %>
+      <%= button_tag type: "submit", class: "button-send" do %>
+        <i class="fa-solid fa-paper-plane"></i>
+      <% end %>
+    <% end %>
+  </div>
 </div>

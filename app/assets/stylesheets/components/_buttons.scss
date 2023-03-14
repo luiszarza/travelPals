@@ -224,6 +224,37 @@ h1, p {
   margin-top: 10px;
 }
 
+.button-round-grey-chat {
+  text-decoration: none;
+  background-color: #E8E9EA;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  border-radius: 100%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding-top: 5px;
+  margin-top: -3%;
+  margin-left: -5%;
+}
+
+.arrow {
+  font-size: 16px;
+  position: absolute;
+  margin-top: -0.5%;
+  margin-left: 2.5%;
+}
+
+.button-send {
+  color: $orange;
+  border: none;
+  background-color: #f4f9fe;
+  font-size: 35px;
+  margin-right: -5%;
+}
+
+
 .button-add-calendar {
   color: #FF9778;
   background-color: white;
