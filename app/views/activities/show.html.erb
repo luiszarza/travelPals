@@ -2,7 +2,7 @@
   <div class= "pictures">
     <%= cl_image_tag @activity.photos.first.key, class: "card-show-picture"%>
     <%= link_to user_path(@activity.user) do %>
-    <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
+      <%= cl_image_tag @activity.user.photo.key, class: "card-index-profile" %>
     <% end %>
   </div>
   <div>
@@ -25,25 +25,24 @@
     </div>
 
     <% if @activity.bookings.any? %>
-        <div class="participants">
-          <div>
-            <p class="details">Who's going (<%= @activity.attendees.size %>)</p>
-              <% @activity.attendees.each do |attendee| %>
-                <%= link_to user_path(attendee), class: "card-index-going" do %>
-                  <% if attendee.photo.attached? %>
-                    <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
-                  <% else %>
-                    <%= image_tag "https://res.cloudinary.com/dzjv9xjxw/image/upload/v1593640008/placeholder-profile-picture-973460_1280_ukqjxu.png", width: 50, height: 50, class: "card-index-profile rounded-circle" %>
-                  <% end %>
-              <% end %>
+      <div class="participants">
+        <div>
+          <p class="details">Who's going (<%= @activity.attendees.size %>)</p>
+            <% @activity.attendees.each do |attendee| %>
+              <%= link_to user_path(attendee), class: "card-index-going" do %>
+                <% if attendee.photo.attached? %>
+                  <%= cl_image_tag attendee.photo.key, width: 50, height: 50, class: "card-index-going" %>
+                <% else %>
+                  <%= image_tag "https://res.cloudinary.com/dzjv9xjxw/image/upload/v1593640008/placeholder-profile-picture-973460_1280_ukqjxu.png", width: 50, height: 50, class: "card-index-profile rounded-circle" %>
+                <% end %>
             <% end %>
-          </div>
+          <% end %>
         </div>
-
-      <% end %>
+      </div>
+    <% end %>
     <div>
       <p class="details">Location<br></p><%=@activity.location %>
-      </div>
+    </div>
   </div>
   <div class="map"
     data-controller="map"
@@ -51,25 +50,21 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <% if @activity.user == current_user %>
-        <div class="edit_delete">
-          <%= link_to "Edit |", edit_activity_path(@activity), class: "link-edit" %>
-          <%= link_to "Delete", activity_path(@activity), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "link-delete" %>
-        </div>
-  <% end %>
-  <div class="card my-1">
-    <div class="card-body">
-      <p class="font-weight-bold">Comments</p>
-      <%= simple_form_for [@activity, @comment] do |f| %>
-        <div class="form-group">
-          <%= f.input :content, label:false, placeholder: "Leave a comment", input_html: {class: 'form-control'} %>
-        </div>
-        <%= f.submit 'Submit', class: 'btn btn-primary mb-4' %>
-      <% end %>
-      <% if @activity.comments.any? %>
-        <% @activity.comments.each do |comment| %>
-          <%= render 'comments/comment', comment: comment %>
-        <% end %>
-      <% end %>
+    <div class="edit_delete">
+      <%= link_to "Edit |", edit_activity_path(@activity), class: "link-edit" %>
+      <%= link_to "Delete", activity_path(@activity), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "link-delete" %>
     </div>
-  </div>
+  <% end %>
+  <p>Comments</p>
+  <%= simple_form_for [@activity, @comment] do |f| %>
+    <div class="form-group">
+      <%= f.input :content, label:false, placeholder: "Leave a comment", input_html: {class: 'form-comment'} %>
+    </div>
+    <%= f.submit 'Submit', class: 'button-submit' %>
+  <% end %>
+  <% if @activity.comments.any? %>
+    <% @activity.comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
+  <% end %>
 </div>
