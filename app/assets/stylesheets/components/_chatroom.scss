@@ -15,6 +15,7 @@
   justify-content: space-between;
   flex-grow: 1;
   height: 100vh;
+  width: 100vw;
 
   .chatroom-name {
     font-family: "montserrat";
@@ -69,7 +70,7 @@
 
   .message-input {
     color: black;
-    width: 44vh;
+    width: 36vh;
     border-radius: 30px;
   }
 
