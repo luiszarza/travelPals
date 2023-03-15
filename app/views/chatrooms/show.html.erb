@@ -9,7 +9,7 @@
     <%= cl_image_tag @chatroom_with_user.photo.key, alt: "text", class: "card-chat-picture" %>
     <div class="name-online">
       <h3 class="chatroom-name"><%= link_to @chatroom_with_user.name, user_path(@chatroom_with_user) %></h3>
-      <h2 class="online">online</h2>
+      <h2 class="online"><span class="dot"></span>online</h2>
     </div>
   </div>
 
