@@ -46,7 +46,7 @@ h1, p {
   font-weight: 700;
 }
 
-.button-rectangle-orange-login {
+.button-rectangle-orange-login, .button-rectangle-orange-login:hover {
   color: white;
     background-color: #FF9778;
     font-family: Montserrat;
@@ -265,4 +265,9 @@ h1, p {
   display: flex;
   text-align: center;
   margin: 5lh auto;
+}
+
+.button-map-view {
+  color: white !important;
+  background-color: $orange !important;
 }
