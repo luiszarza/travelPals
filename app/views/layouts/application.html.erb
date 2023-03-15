@@ -24,15 +24,15 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") || action_name == "map" %>
+    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") || (action_name == "new" && controller_name == "chatrooms") || action_name == "map" %>
       <div class="inner-cont">
     <% end %>
     <%= yield %>
-    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") %>
+    <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") || (action_name == "new" && controller_name == "chatrooms") %>
       </div>
     <% end %>
     <% if user_signed_in? %>
-      <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") %>
+      <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") || (action_name == "new" && controller_name == "chatrooms") %>
         <%= render "shared/navbar" %>
       <% end %>
     <% end %>
