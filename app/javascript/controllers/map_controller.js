@@ -21,7 +21,7 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToCenter()
-    this.#flyToActivity()
+    // this.#flyToActivity()
     // disable map zoom when using scroll
     this.map.scrollZoom.disable();
   }
@@ -35,10 +35,13 @@ export default class extends Controller {
   }
 
   #fitMapToCenter() {
-    const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([115.1470086, -8.6594826])
+    // const bounds = new mapboxgl.LngLatBounds()
+    // bounds.extend([115.1470086, -8.6594826])
+    // this.map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 3000 })
 
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 3000 })
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
   #flyToActivity() {

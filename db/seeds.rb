@@ -81,9 +81,9 @@ user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save
 
   activity = Activity.new(
-    title: "Kayaking in Halong Bay",
+    title: "Kayaking in Hải Phòng",
     description: "Explore the stunning limestone karsts and crystal-clear waters of Halong Bay on this kayaking adventure. We'll paddle through hidden lagoons and explore secluded beaches. No kayaking experience necessary!",
-    location: "Halong Bay, Vietnam",
+    location: "street, 1/4 town, Hải Phòng, Vietnam",
     time: DateTime.new(2023, 8, 7, 10, 15, 0),
     user_id: user3.id
   )

@@ -23,7 +23,6 @@
   </head>
 
   <body>
-    <%= render "shared/flashes" %>
     <% unless action_name == "home" || (action_name == "show" && controller_name == "chatrooms") || (action_name == "create" && controller_name == "messages") || action_name == "map" %>
       <div class="inner-cont">
     <% end %>
