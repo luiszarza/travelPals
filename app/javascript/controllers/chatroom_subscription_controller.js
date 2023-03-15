@@ -7,13 +7,16 @@ export default class extends Controller {
   static targets = ["messages"]
 
   connect() {
+    console.log("Connected to the chatroom")
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
+    console.dir("this.channel", this.channel);
   }
 
   resetForm(event) {
+    console.log("resetForm", event)
     event.target.reset()
   }
 
@@ -22,6 +25,8 @@ export default class extends Controller {
     this.channel.unsubscribe()
   }
     #insertMessageAndScrollDown(data) {
+      console.log("insertMessageAndScrollDown")
+      if (data.message === "") { return }
       const currentUserIsSender = this.currentUserIdValue === data.sender_id
       const messageElement = this.#buildMessageElement(currentUserIsSender, data.message)
       this.messagesTarget.insertAdjacentHTML("beforeend", messageElement)
@@ -29,6 +34,7 @@ export default class extends Controller {
   }
 
   #buildMessageElement(currentUserIsSender, message) {
+    console.log("buildMessageElement")
     return `
       <div class="message-row d-flex ${this.#justifyClass(currentUserIsSender)}">
         <div class="${this.#userStyleClass(currentUserIsSender)}">
@@ -39,10 +45,12 @@ export default class extends Controller {
   }
 
   #justifyClass(currentUserIsSender) {
+    console.log("justifyClass")
     return currentUserIsSender ? "justify-content-end" : "justify-content-start"
   }
 
   #userStyleClass(currentUserIsSender) {
+    console.log("userStyleClass")
     return currentUserIsSender ? "sender-style" : "receiver-style"
   }
 }

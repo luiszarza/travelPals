@@ -1,4 +1,4 @@
 <div id="message-<%= message.id %>">
   <p class="message-content message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end text-end' : 'justify-content-start text-start' %>"><%= message.content %></p>
-    <%# <i class= "message-date"><%= message.created_at.strftime("%b %e, %H:%M") %></i>
+    <%# <i class= "message-date"><%= message.created_at.strftime("%b %e, %H:%M") %>
 </div>
