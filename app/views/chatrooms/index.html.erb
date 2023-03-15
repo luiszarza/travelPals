@@ -8,14 +8,17 @@
 </div>
 <div id="users-show">
   <% if @chatrooms.empty? %>
-    <h1>Start chatting!</h1>
-  <% else %>
-    <% @chatrooms.each do |chatroom| %>
-      <div class="card-chat-index">
+  <h1>Start chatting!</h1>
+<% else %>
+  <% @chatrooms.each do |chatroom| %>
+    <div class="card-chat-index">
+      <%= link_to chatroom_path(chatroom) do %>
         <%= cl_image_tag @chatroom_info[chatroom.id][:photo_key], alt: "text", class: "photo-user-chat" %>
-        <%= link_to @chatroom_info[chatroom.id][:user_name], chatroom_path(chatroom), class:"username" %>
-        <p class="chat-date"><%= @chatroom_info[chatroom.id][:date] %></p>
-      </div>
-    <% end %>
+      <% end %>
+      <%= link_to @chatroom_info[chatroom.id][:user_name], chatroom_path(chatroom), class:"username" %>
+      <p class="chat-date"><%= @chatroom_info[chatroom.id][:date] %></p>
+    </div>
   <% end %>
+<% end %>
+
 </div>
