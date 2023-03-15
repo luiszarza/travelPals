@@ -6,8 +6,9 @@
     <i class="fa-solid fa-check"></i>
   </div>
   <div class="confirmation-card">
-        <h1 class="happy-travels">Happy Travels!</h1>
-        <h3 class="confirmation">You have successfully joined this activity</h3>
+        <h1 class="happy-travels mb-3">You're going!</h1>
+        <p class="mb-0"><%= @booking.activity.title  %></p>
+        <p class="mb-0"><%= @booking.activity.time.strftime('%a, %b %e • %R') %></p>
   </div>
   <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?
     text=#{@booking.activity.title}
