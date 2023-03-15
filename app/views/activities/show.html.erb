@@ -11,7 +11,9 @@
       <div>
         <p class="date"><%= @activity.time.strftime('%a, %b %e • %R') %></p>
       </div>
-        <i
+      <div class="d-flex justify-content-between align-items-center">
+
+       <i
           class="fas fa-share-alt"
           data-controller="share-api"
           data-action="click->share-api#share"
@@ -27,6 +29,9 @@
           <%= link_to "Join", activity_bookings_path(@activity), data: {turbo_method: :post}, class: "button-join ms-auto" %>
         <% end %>
       </div>
+
+      </div>
+
     </div>
     <div>
       <p class="details">Details</p>
