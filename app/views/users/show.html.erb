@@ -37,7 +37,7 @@
         <% end %>
       <% end %>
     <% else %>
-      <p>You have no organized activities</p>
+      <h3>You have no organized activities</h3>
     <% end %>
     <% if @user.attending_activities.present? %>
       <p class="going-to">Going to</p>
@@ -54,7 +54,7 @@
         <% end %>
       <% end %>
     <% else %>
-      <p>You are not going to any activities</p>
+      <h3>You are not going to any activities</h3>
     <% end %>
   </div>
 </div>
