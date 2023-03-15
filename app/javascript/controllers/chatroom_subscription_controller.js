@@ -12,7 +12,7 @@ export default class extends Controller {
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
-    console.dir("this.channel", this.channel);
+    this.#scrollDown()
   }
 
   resetForm(event) {
@@ -31,6 +31,10 @@ export default class extends Controller {
       const messageElement = this.#buildMessageElement(currentUserIsSender, data.message)
       this.messagesTarget.insertAdjacentHTML("beforeend", messageElement)
       this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+  }
+
+  #scrollDown() {
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
   #buildMessageElement(currentUserIsSender, message) {
