@@ -10,5 +10,5 @@
         <p class="mb-0"><%= @booking.activity.title  %></p>
         <p class="mb-0"><%= @booking.activity.time.strftime('%a, %b %e • %R') %></p>
   </div>
-  <%= link_to "Add to Google Calendar", "https://calendar.google.com/calendar/r/eventedit?text=#{@booking.activity.title}&dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}&ctz=#{@booking.activity.time.strftime('%Z')}&details=#{@booking.activity.description}&location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
+  <%= link_to "Add to Google Calendar", "https://www.google.com/calendar/render?action=TEMPLATE&text=#{@booking.activity.title}&dates=#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}/#{@booking.activity.time.strftime('%Y%m%dT%H%M%S')}&ctz=#{@booking.activity.time.strftime('%Z')}&details=#{@booking.activity.description}&location=#{@booking.activity.location}", class: "button-add-calendar", target: "_blank" %>
 </div>
