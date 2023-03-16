@@ -17,7 +17,7 @@ class ActivitiesController < ApplicationController
   end
 
   def map
-    @activities = Activity.all
+    @activities = Activity.all.order(time: :asc)
     @activity_info = {}
     @activities.geocoded.each do |activity|
       @activity_info[activity.title.gsub(" ", "-")] = {
