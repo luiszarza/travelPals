@@ -567,7 +567,8 @@ admin = User.new(
   password: "lewagon1134",
   name: "Admin McAdmin",
   bio: "I AM THE ONE WHO ADMINS",
-  age: 93
+  age: 93,
+  admin: true
 )
 
 file = URI.open("https://images.unsplash.com/photo-1678144720530-d36bc87b6456?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
