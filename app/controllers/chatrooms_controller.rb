@@ -6,7 +6,7 @@ class ChatroomsController < ApplicationController
     @chatrooms.each do |chatroom|
       if chatroom.requester == current_user
         @chatroom_info[chatroom.id] = {
-          user_name: chatroom.recipient.name,
+          name: chatroom.recipient.name,
           photo_key: chatroom.recipient.photo.key,
           date: chatroom.updated_at.strftime("%I:%M %P")
         }

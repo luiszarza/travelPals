@@ -15,7 +15,7 @@
       <%= link_to chatroom_path(chatroom) do %>
         <%= cl_image_tag @chatroom_info[chatroom.id][:photo_key], alt: "text", class: "photo-user-chat" %>
       <% end %>
-      <%= link_to @chatroom_info[chatroom.id][:user_name], chatroom_path(chatroom), class:"username" %>
+      <%= link_to @chatroom_info[chatroom.id][:name], chatroom_path(chatroom), class:"username" %>
       <p class="chat-date"><%= @chatroom_info[chatroom.id][:date] %></p>
     </div>
   <% end %>
