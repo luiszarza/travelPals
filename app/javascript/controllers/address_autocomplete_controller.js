@@ -27,9 +27,12 @@ export default class extends Controller {
     this.addressTarget.value = event.result["place_name"]
     this.longitudeTarget.value = event.result.geometry.coordinates[0]
     this.latitudeTarget.value = event.result.geometry.coordinates[1]
+    console.log(event.result.geometry.coordinates);
   }
 
   #clearInputValue() {
     this.addressTarget.value = ""
   }
 }
+
+

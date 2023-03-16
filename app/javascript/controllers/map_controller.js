@@ -21,7 +21,6 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToCenter()
-    // this.#flyToActivity()
     // disable map zoom when using scroll
     this.map.scrollZoom.disable();
   }
@@ -42,34 +41,5 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-  }
-
-  #flyToActivity() {
-    let activeActivityName = 'Yoga-Retreat-in-Bali'
-    const setActiveActivity = (activityName) => {
-      if (activityName == activeActivityName) {
-        return
-      }
-
-      this.map.flyTo(this.infoValue[activityName])
-
-      activeActivityName = activityName;
-    }
-
-    const isElementOnScreen = (id) => {
-      const element = document.getElementById(id)
-      const bounds = element.getBoundingClientRect();
-      return bounds.right < window.innerWidth && bounds.left > 0;
-    }
-
-    window.onclick = (e) => {
-      setActiveActivity(e.target.id)
-      // for (const activityName in this.infoValue) {
-      //   if (isElementOnScreen(activityName)) {
-      //     setActiveActivity(activityName)
-      //     break;
-      //   }
-      // }
-    }
   }
 }
