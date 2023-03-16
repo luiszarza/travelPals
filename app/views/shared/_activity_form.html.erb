@@ -12,18 +12,25 @@
 
       <%= simple_form_for @activity, data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :title, label: false, input_html: { class: 'special', placeholder: "Activity title" } %>
-        <%= f.input :description, as: :text, label: false, input_html: { placeholder: "Activity description (min 150 characters)...", rows: "5"} %>
+        <%= f.input :description, as: :text, label: false, input_html: { placeholder: "Activity description (min 30 characters)...", rows: "5"} %>
+         <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
           <% if action_name == "new" %>
             <%= f.input :location, label: false,
-            input_html: {data: {address_autocomplete_target: "address"}, class: "d-none", placeholder: "Location"},
-            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+              input_html: {data: {address_autocomplete_target: "address"}, class: "d-none", placeholder: "Location"}
             %>
           <% else %>
             <%= f.input :location, label: false,
               input_html: {data: {address_autocomplete_target: "address"}, class: "d-none", placeholder: "Location"},
-              wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"], address_autocomplete_location_value: @activity.location}}
+              wrapper_html: {data: {address_autocomplete_location_value: @activity.location}}
             %>
           <% end %>
+          <%= f.input :longitude, label: false,
+            input_html: {data: {address_autocomplete_target: "longitude"}, class: "d-none"}
+            %>
+            <%= f.input :latitude, label: false,
+            input_html: {data: {address_autocomplete_target: "latitude"}, class: "d-none"}
+            %>
+         </div>
         <%= f.input :time, as: :string, label: false, placeholder: "Select your date", input_html: { data: { flatpickr_target: "time" } } %>
         <div class="container" data-controller="photo-preview">
           <%= f.input :photos, as: :file, input_html: {id: 'photo-input', class: "d-none", multiple: true}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo', class: "form-control", id: "customFile" %>
