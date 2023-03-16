@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
         center: [ activity.longitude, activity.latitude ],
         zoom: 10
       }
-    end
+    end 
 
     @markers = @activities.geocoded.map { |activity|
       { lat: activity.latitude,
