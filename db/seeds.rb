@@ -562,6 +562,19 @@ puts "Attaching photo 22"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
+admin = User.new(
+  email: "admin@gmail.com",
+  password: "lewagon1134",
+  name: "Admin McAdmin",
+  bio: "I AM THE ONE WHO ADMINS",
+  age: 93
+)
+
+file = URI.open("https://images.unsplash.com/photo-1678144720530-d36bc87b6456?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+puts "Attaching admin profile"
+admin.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+admin.save
+
 puts "Creating bookings"
 75.times do
   Booking.create(
