@@ -15,7 +15,6 @@ Activity.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
-
 user1 = User.new(
   email: "john@gmail.com",
   password: "abc123",
@@ -29,14 +28,13 @@ puts "Attaching profile photo 1"
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
 
-
- activity = Activity.new(
+activity = Activity.new(
     title: "Hike to Mount Batur",
     description: "Join us for an unforgettable sunrise hike to the summit of Mount Batur in Bali. We'll be guided by a local guide who will share their knowledge of the area and culture. Experience breathtaking views of the island while enjoying a healthy breakfast at the top of the mountain.",
-    location: "Canggu, Bali",
-    time: DateTime.new(2023, 10, 3, 18, 0, 0),
+    location: "Frii hotel, Canggu, Bali",
+    time: DateTime.new(2023, 5, 3, 18, 0, 0),
     user_id: user1.id
-)
+  )
 
 file = URI.open("https://images.unsplash.com/photo-1519401515635-cecff1f60e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1190&q=80")
 puts "Attaching photo 1"
@@ -58,7 +56,7 @@ user2.save
  activity = Activity.new(
     title: "Sushi-making workshop",
     description: "Learn the art of sushi-making from a professional chef in this hands-on workshop. You'll learn how to prepare sushi rice, make sushi rolls, and create beautiful presentations. Afterwards, enjoy a delicious sushi feast with your fellow participants!",
-    location: "Tokyo, Japan",
+    location: "Tygr Sushi, Berawa, Bali",
     time: DateTime.new(2023, 5, 5, 13, 30, 0),
     user_id: user2.id
   )
@@ -81,10 +79,10 @@ user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save
 
   activity = Activity.new(
-    title: "Kayaking in Hải Phòng",
+    title: "Kayaking in Halong Bay",
     description: "Explore the stunning limestone karsts and crystal-clear waters of Halong Bay on this kayaking adventure. We'll paddle through hidden lagoons and explore secluded beaches. No kayaking experience necessary!",
-    location: "street, 1/4 town, Hải Phòng, Vietnam",
-    time: DateTime.new(2023, 8, 7, 10, 15, 0),
+    location: "Old Quarter Ta Hien, Hanoi",
+    time: DateTime.new(2023, 6, 7, 10, 15, 0),
     user_id: user3.id
   )
 
@@ -107,14 +105,14 @@ user4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user4.save
 
   activity = Activity.new(
-    title: "Cooking class in Tuscany",
-    description: "Indulge your passion for food and wine with this cooking class in the heart of Tuscany. You'll learn how to make classic Italian dishes using fresh, seasonal ingredients, and enjoy a delicious meal paired with local wines.",
-    location: "Tuscany, Italy",
+    title: "Cooking class at Milk and Madu",
+    description: "Indulge your passion for food and wine with this cooking class in the heart of Bali. You'll learn how to make classic Indonesian dishes using fresh, seasonal ingredients, and enjoy a delicious meal paired with local wines.",
+    location: "Milk and Madu, Canggu",
     time: DateTime.new(2023, 6, 10, 19, 45, 0),
     user_id: user4.id
   )
 
-  file = URI.open("https://images.unsplash.com/photo-1552598715-7eeb9232a2ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1158&q=80")
 puts "Attaching photo 4"
 activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
@@ -135,7 +133,7 @@ user5.save
     title: "Surfing lessons in Byron Bay",
     description: "Experience the thrill of surfing with expert instructors in the beautiful beach town of Byron Bay. Whether you're a beginner or an experienced surfer, you'll improve your skills and have a blast in the waves.",
     location: "Byron Bay, Australia",
-    time: DateTime.new(2023, 7, 12, 8, 0, 0),
+    time: DateTime.new(2023, 4, 12, 8, 0, 0),
     user_id: user5.id
   )
 
@@ -157,13 +155,13 @@ user6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user6.save
 
   activity = Activity.new(
-  title: "Surfing Lessons in Waikiki",
-  description: "Learn to surf with a professional instructor in the world-famous Waikiki Beach in Hawaii. This activity is perfect for beginners and intermediate surfers who want to improve their skills. Enjoy the beautiful scenery and crystal-clear water while riding the waves.",
-  location: "Waikiki Beach, Hawaii",
-  time: DateTime.new(2023, 9, 15, 16, 30, 0),
+  title: "Movie night at the beach",
+  description: "Join us for an unforgettable movie night under the stars, with the soothing sound of waves and sand between your toes, making it the perfect beachside setting for a cinematic experience.",
+  location: "Echo Beach, Bali",
+  time: DateTime.new(2023, 4, 15, 16, 30, 0),
   user_id: user6.id)
 
-  file = URI.open("https://images.unsplash.com/photo-1588440485271-59242721d4b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=909&q=80")
   puts "Attaching photo 6"
   activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
   activity.save
@@ -183,7 +181,7 @@ user7.save
   activity = Activity.new(
   title: "Street Food Tour in Bangkok",
   description: "Embark on a food adventure in Bangkok, exploring the city's vibrant street food scene. Try a variety of authentic Thai dishes from local vendors and restaurants, including pad thai, som tam, and mango sticky rice. Your guide will take you to the best spots in the city and share interesting facts about the culture and history of Thai cuisine.",
-  location: "Bangkok, Thailand",
+  location: "Phed Mark, Bangkok, Thailand",
   time: DateTime.new(2023, 5, 18, 12, 0, 0),
   user_id: user7.id)
 
@@ -208,7 +206,7 @@ user8.save
   activity = Activity.new(
   title: "Wine Tasting in Napa Valley",
   description: "Sip some of the finest wines in the world on a tour of Napa Valley in California. This guided tour will take you to several wineries where you'll sample different types of wine and learn about the wine-making process. Take in the stunning views of the valley while enjoying a delicious lunch with your group.",
-  location: "Napa Valley, California",
+  location: "French Laundry, California",
   time: DateTime.new(2023, 4, 20, 10, 0, 0),
   user_id: user8.id)
 
@@ -233,8 +231,8 @@ user9.save
 activity = Activity.new(
   title: "Street Walking Tour",
   description: "Explore the charming streets of Antwerp on this walking tour. Learn about the city's history, culture, and architecture as you stroll through its picturesque neighborhoods. Marvel at the stunning medieval buildings and admire the art and design that make Antwerp a hub of creativity. Don't miss this opportunity to discover the hidden gems and local secrets of one of Europe's most beautiful cities.",
-  location: "Antwerp, Belgium",
-  time: DateTime.new(2023, 6, 23, 14, 45, 0),
+  location: "De Meir, Antwerp, Belgium",
+  time: DateTime.new(2023, 4, 23, 14, 45, 0),
   user_id: user9.id)
 
   file = URI.open("https://images.unsplash.com/photo-1502991644659-e8aa151f8389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -258,8 +256,8 @@ user10.save
   activity = Activity.new(
   title: "Yoga Retreat in Bali",
   description: "Escape to paradise and unwind with a yoga retreat in Bali. This retreat includes a yoga class, guided meditation, and workshops on mindfulness and self-care. Relax in the beautiful surroundings of Bali and connect with like-minded individuals.",
-  location: "Canggu, Bali",
-  time: DateTime.new(2023, 7, 26, 11, 15, 0),
+  location: "Body Factory, Canggu, Bali",
+  time: DateTime.new(2023, 5, 26, 11, 15, 0),
   user_id: user10.id)
 
   file = URI.open("https://images.unsplash.com/photo-1584937005173-c307e769aa24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -282,8 +280,8 @@ user11.save
   activity = Activity.new(
   title: "Safari in Serengeti National Park",
   description: "Embark on a safari adventure in the heart of Serengeti National Park in Tanzania. This tour will take you on a journey through the African wilderness where you'll see a variety of wildlife, including lions, elephants, and giraffes. Stay in luxury tents and enjoy the stunning views of the savannah.",
-  location: "Tanzania, Africa",
-  time: DateTime.new(2023, 10, 28, 9, 30, 0),
+  location: "Serengeti National Park, Tanzania",
+  time: DateTime.new(2023, 4, 28, 9, 30, 0),
   user_id: user11.id)
 
   file = URI.open("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80")
@@ -332,7 +330,7 @@ user13.save
   title: "Sunset Sailing",
   description: "Join us for a beautiful sunset sail around the island of Santorini. Experience the stunning views of the Aegean Sea and the island's caldera while enjoying some wine and snacks on board.",
   location: "Santorini, Greece",
-  time: DateTime.new(2023, 11, 5, 10, 45, 0),
+  time: DateTime.new(2023, 4, 5, 10, 45, 0),
   user_id: user13.id)
 
   file = URI.open("https://images.unsplash.com/photo-1674816795437-530a26e02624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
@@ -355,8 +353,8 @@ user14.save
   activity = Activity.new(
   title: "Cooking Class",
   description: "Learn to cook some traditional Thai dishes with a local chef. We'll start with a visit to the local market to buy fresh ingredients, and then head back to the kitchen to prepare and cook the dishes together. Enjoy your delicious creations afterwards!",
-  location: "Bangkok, Thailand",
-  time: DateTime.new(2024, 1, 8, 15, 15, 0),
+  location: "Sorn, Bangkok, Thailand",
+  time: DateTime.new(2023, 5, 8, 15, 15, 0),
   user_id: user14.id)
 
   file = URI.open("https://images.unsplash.com/photo-1559314809-0d155014e29e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -379,8 +377,8 @@ user15.save
   activity = Activity.new(
   title: "Rafting Adventure",
   description: "Experience the thrill of rafting down the rapids of the Ayung River in Bali. Our experienced guides will ensure your safety as you navigate the river and take in the stunning jungle scenery. Lunch will be provided after the adventure.",
-  location: "Bali, Indonesia",
-  time: DateTime.new(2024, 1, 11, 14, 0, 0),
+  location: "Warung Sika, Bali, Indonesia",
+  time: DateTime.new(2023, 4, 11, 14, 0, 0),
   user_id: user15.id)
 
   file = URI.open("https://images.unsplash.com/photo-1629248457649-b082812aea6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -405,7 +403,7 @@ activity = Activity.new(
   title: "Motorcycle Day Trip",
   description: "Join us for a thrilling motorcycle tour of Ho Chi Minh City. We'll explore the city's vibrant streets, historic landmarks, and bustling markets, experiencing the sights, sounds, and tastes of Vietnam along the way. Lunch will be provided at a local restaurant.",
   location: "Ho Chi Minh City, Vietnam",
-  time: DateTime.new(2024, 1, 15, 9, 0, 0),
+  time: DateTime.new(2023, 4, 15, 9, 0, 0),
   user_id: user16.id)
 
   file = URI.open("https://images.unsplash.com/photo-1593449227036-9de17c6316e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=734&q=80")
@@ -429,7 +427,7 @@ user17.save
   title: "Yoga Retreat",
   description: "Escape to a beautiful yoga retreat in the mountains of Nepal. We'll practice yoga, enjoy delicious vegetarian meals, and have plenty of time to explore the surrounding nature and culture. This is the perfect opportunity to disconnect and recharge.",
   location: "Pokhara, Nepal",
-  time: DateTime.new(2024, 1, 18, 9, 0, 0),
+  time: DateTime.new(2023, 5, 18, 9, 0, 0),
   user_id: user17.id)
 
   file = URI.open("https://images.unsplash.com/photo-1526712318848-5f38e2740d44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -453,7 +451,7 @@ user18.save
   title: "Scuba Diving Adventure",
   description: "Explore the stunning coral reefs of the Great Barrier Reef in Australia. Our experienced instructors will ensure your safety as you dive down to experience the incredible marine life. Lunch will be provided on board the boat.",
   location: "Great Barrier Reef, Australia",
-  time: DateTime.new(2024, 1, 22, 19, 0, 0),
+  time: DateTime.new(2023, 5, 22, 19, 0, 0),
   user_id: user18.id)
 
   file = URI.open("https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80")
@@ -477,8 +475,8 @@ user19.save
 activity = Activity.new(
   title: "Sunset Cocktail Crawl",
   description: "Join me for a fun night out exploring Bali's best bars and cocktails. We'll visit some of the coolest and most scenic bars, enjoy delicious cocktails, and make new friends. Don't miss out on this amazing experience!",
-  location: "Seminyak, Bali",
-  time: DateTime.new(2023, 8, 12, 19, 0, 0),
+  location: "Black Sand Brewery, Bali",
+  time: DateTime.new(2023, 4, 12, 19, 0, 0),
   user_id: user19.id
 )
 
@@ -503,8 +501,8 @@ user20.save
 activity = Activity.new(
   title: "Surfing Adventure",
   description: "Join me for an epic day of surfing at one of Bali's best spots. We'll catch some waves, enjoy the beautiful scenery, and have an unforgettable experience. Suitable for all levels, whether you're a beginner or an experienced surfer. See you there!",
-  location: "Uluwatu, Bali",
-  time: DateTime.new(2023, 9, 20, 9, 0, 0),
+  location: "Savaya, Uluwatu, Bali",
+  time: DateTime.new(2023, 5, 20, 9, 0, 0),
   user_id: user20.id
 )
 
@@ -528,8 +526,8 @@ user21.save
 activity = Activity.new(
     title: "Artisan Jewelry Workshop",
     description: "Join us for a fun and creative afternoon making your own unique jewelry with a local artisan in Bali. Learn how to work with various materials and techniques to create a beautiful piece that you can take home with you.",
-    location: "Ubud, Bali",
-    time: DateTime.new(2023, 11, 10, 14, 0, 0),
+    location: "Suka Espresso, Bali",
+    time: DateTime.new(2023, 4, 10, 14, 0, 0),
     user_id: user21.id
   )
 
@@ -554,8 +552,8 @@ user22.save
 activity = Activity.new(
     title: "Sunset Cruise in Benoa Bay",
     description: "Join us for a relaxing and romantic sunset cruise in Benoa Bay. Enjoy stunning views of the Bali coastline while sipping on cocktails and snacking on delicious appetizers. Perfect for couples or solo travelers looking to unwind and make new friends.",
-    location: "Benoa, Bali",
-    time: DateTime.new(2023, 9, 15, 16, 0, 0),
+    location: "Secret Cafe, Nusa Dua, Bali",
+    time: DateTime.new(2023, 4, 15, 16, 0, 0),
     user_id: user22.id
   )
 
@@ -565,7 +563,7 @@ activity.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 activity.save
 
 puts "Creating bookings"
-50.times do
+75.times do
   Booking.create(
     activity: Activity.all.sample,
     user: User.all.sample
