@@ -17,6 +17,7 @@
       <% end %>
       <%= link_to @chatroom_info[chatroom.id][:user_name], chatroom_path(chatroom), class:"username" %>
       <p class="chat-date"><%= @chatroom_info[chatroom.id][:date] %></p>
+      <%= console %>
     </div>
   <% end %>
 <% end %>
