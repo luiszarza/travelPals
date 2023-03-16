@@ -24,13 +24,13 @@
   <div class="my-class">
     <% if @user.organized_activities.present? %>
       <p class="organizing">Organizing</p>
-      <% @user.organized_activities.each do |activity| %>
+      <% @user.organized_activities.order(:time).each do |activity| %>
         <%= link_to activity_path(activity) do %>
           <div class="card-event">
             <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
             <div class="infos-activity">
               <h3 class="infos"><%= activity.title %></h3>
-              <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+              <p class="time"><%= activity.time.strftime('%b %d, %Y at %H:%M') %></p>
               <p class="location"><i class="fa-solid fa-location-dot"></i> <%= activity.location %></p>
             </div>
           </div>
@@ -41,13 +41,13 @@
     <% end %>
     <% if @user.attending_activities.present? %>
       <p class="going-to">Going to</p>
-      <% @user.attending_activities.each do |activity| %>
+      <% @user.attending_activities.order(:time).each do |activity| %>
         <%= link_to activity_path(activity) do %>
           <div class="card-event">
             <%= cl_image_tag activity.photos.first.key, class: "picture-profile-card" %>
             <div class="infos-activity">
               <h3 class="infos"><%= activity.title %></h3>
-              <p class="time"><%= activity.time.strftime('%a, %b %e • %R') %></p>
+              <p class="time"><%= activity.time.strftime('%b %d, %Y at %H:%M') %></p>
               <p class="location"><i class="fa-solid fa-location-dot"></i> <%=activity.location %></p>
             </div>
           </div>
@@ -58,3 +58,4 @@
     <% end %>
   </div>
 </div>
+

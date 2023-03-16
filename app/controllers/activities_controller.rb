@@ -6,9 +6,9 @@ class ActivitiesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "title ILIKE :query OR description ILIKE :query OR location ILIKE :query"
-      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%").order(time: :asc)
     else
-      @activities = Activity.all
+      @activities = Activity.all.order(time: :asc)
     end
     respond_to do |format|
       format.html # Follow regular flow of Rails
