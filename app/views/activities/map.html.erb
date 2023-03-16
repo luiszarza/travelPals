@@ -1,10 +1,10 @@
 <div class="map_backgr"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-info-value="<%= @activity_info.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-controller="map-index"
+  data-map-index-markers-value="<%= @markers.to_json %>"
+  data-map-index-info-value="<%= @activity_info.to_json %>"
+  data-map-index-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
 >
-  <div data-map-target="box" class="box-container">
+  <div data-map-index-target="box" class="box-container">
     <% @activities.each do |activity| %>
       <%= render "info_window", activity: activity %>
     <% end %>
