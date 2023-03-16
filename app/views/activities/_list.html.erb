@@ -3,7 +3,13 @@
   <% @activities.each do |activity| %>
     <%= link_to activity do %>
       <div class="card-index">
-        <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
+        <div class="image-heart">
+          <%= cl_image_tag activity.photos.first.key, crop: :fill, class: "card-index-picture" %>
+          <div class="div-heart">
+            <i class="fa-solid fa-heart heart"></i>
+          </div>
+        </div>
+
         <div class= "description-index">
           <h5 class= "title"><%= activity.title %></h5>
           <p class= "location-index"><i class="fa-solid fa-location-dot"></i> <%=activity.location%></p>
