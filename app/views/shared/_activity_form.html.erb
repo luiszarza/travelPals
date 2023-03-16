@@ -13,7 +13,7 @@
       <%= simple_form_for @activity, data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :title, label: false, input_html: { class: 'special', placeholder: "Activity title" } %>
         <%= f.input :description, as: :text, label: false, input_html: { placeholder: "Activity description (min 30 characters)...", rows: "5"} %>
-         <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
+         <div class="mb-3" data-controller="address-autocomplete" data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
           <% if action_name == "new" %>
             <%= f.input :location, label: false,
               input_html: {data: {address_autocomplete_target: "address"}, class: "d-none", placeholder: "Location"}

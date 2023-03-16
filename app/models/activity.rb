@@ -8,6 +8,6 @@ class Activity < ApplicationRecord
   validates_presence_of :title, :description, :location, :time, :photos
   validates :description, length: { minimum: 30 }
   geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
+  # after_validation :geocode, if: :will_save_change_to_location?
   has_many :comments, dependent: :destroy
 end

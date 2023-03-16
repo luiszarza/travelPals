@@ -20,11 +20,11 @@ export default class extends Controller {
     this.geocoder.on("result", event => this.#setInputValue(event))
     this.geocoder.on("clear", () => this.#clearInputValue())
     this.geocoder._inputEl.placeholder = "Location";
-    this.geocoder._inputEl.value = this.locationValue;
+    this.geocoder._inputEl.value = this.addressTarget.locationValue;
   }
 
   #setInputValue(event) {
-    this.addressTarget.value = event.result["place_name"]
+    this.addressTarget.value = event.result["text"]
     this.longitudeTarget.value = event.result.geometry.coordinates[0]
     this.latitudeTarget.value = event.result.geometry.coordinates[1]
   }
