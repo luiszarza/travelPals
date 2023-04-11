@@ -29,3 +29,5 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 end
+
+# Path: app/controllers/pages_controller.rb
